@@ -1,13 +1,14 @@
 #!/bin/bash
 echo '#########################################'
-echo '# Αλλαγή το Hostname σε Vtiger και      #'
+echo '# Αλλαγή το Hostname σε vtiger και      #'
 echo '# domain σε vtiger.businesspi.local     #'
 echo '#########################################'
 sleep 3
-hostname vtiger
-service hostname restart
+cp /etc/hostsname /etc/hostsname.origin
+echo 'vtiger' > /etc/hostname
 cp /etc/hosts /etc/hosts.origin
 cp configuration-files/hosts /etc/hosts
+invoke-rc.d hostname.sh start
 echo '#########################################'
 echo '# Ενημέρωση συστήματος και εγκατάσταση  #'
 echo '#               LAMP                    #'
@@ -41,7 +42,7 @@ echo '# Απανεκκίνηση Apache και MySQL         #'
 echo '#                                       #'
 echo '#########################################'
 sleep 3
-service	apache restart
+service	apache2 restart
 service mysql restart
 
 echo ''
