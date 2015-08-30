@@ -1,0 +1,15 @@
+<VirtualHost *:80>
+    ServerName vtiger.businesspi.local
+    DocumentRoot /var/www/vtigercrm
+    <Directory />
+                Options FollowSymLinks
+                AllowOverride None
+    </Directory>
+    # Possible vaues include: debug, info, notice, warn, error, crit,
+    # alert, emerg.
+    LogLevel warn
+    ErrorLog /var/log/apache2/vtigercrm-error.log
+    CustomLog /var/log/apache2/vtigercrm-access.log combined
+    ServerSignature Off
+
+</VirtualHost>
