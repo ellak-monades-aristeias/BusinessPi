@@ -1,7 +1,7 @@
 <VirtualHost *:80>
     ServerName vtiger.businesspi.local
     DocumentRoot /var/www/vtigercrm
-    <Directory />
+    <Directory /var/www/vtigercrm>
                 Options FollowSymLinks
                 AllowOverride None
     </Directory>
