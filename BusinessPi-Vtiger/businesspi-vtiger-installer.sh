@@ -4,7 +4,7 @@ echo '# Αλλαγή το Hostname σε vtiger και      #'
 echo '# domain σε vtiger.businesspi.local     #'
 echo '#########################################'
 sleep 3
-cp /etc/hostsname /etc/hostsname.origin
+cp /etc/hostname /etc/hostname.origin
 echo 'vtiger' > /etc/hostname
 cp /etc/hosts /etc/hosts.origin
 cp configuration-files/hosts /etc/hosts
