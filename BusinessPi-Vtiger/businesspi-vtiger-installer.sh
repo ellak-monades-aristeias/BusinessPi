@@ -34,7 +34,8 @@ chown -R www-data:www-data /var/www/vtigercrm
 cp /etc/php5/apache2/php.ini /etc/php5/apache2/php.ini.origin
 cp configuration-files/php.ini /etc/php5/apache2/php.ini
 cp configuration-files/vtigercrmapache /etc/apache2/sites-available/
-ln -s /etc/apache2/sites-available/vtigercrmapache /etc/apache2/sites-enabled/030-vtiger.conf
+a2ensite vtigercrmapache
+a2dissite 000-default
 echo '#########################################'
 echo '# Επανεκκίνηση Apache και MySQL         #'
 echo '#                                       #'
