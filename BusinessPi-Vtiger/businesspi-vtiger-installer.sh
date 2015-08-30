@@ -32,9 +32,7 @@ mv vtigercrm /var/www/vtigercrm
 chmod -R 775 /var/www/vtigercrm
 chown -R www-data:www-data /var/www/vtigercrm
 cp /etc/php5/apache2/php.ini /etc/php5/apache2/php.ini.origin
-cp /etc/mysql/my.cnf /etc/mysql/my.cnf.origin
 cp configuration-files/php.ini /etc/php5/apache2/php.ini
-cp configuration-files/my.cnf /etc/mysql/my.cnf
 cp configuration-files/vtigercrmapache /etc/apache2/sites-available/
 ln -s /etc/apache2/sites-available/vtigercrmapache /etc/apache2/sites-enabled/030-vtiger.conf
 echo '#########################################'
