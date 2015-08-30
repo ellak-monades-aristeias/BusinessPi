@@ -38,7 +38,7 @@ cp configuration-files/my.cnf /etc/mysql/my.cnf
 cp configuration-files/vtigercrmapache /etc/apache2/sites-available/
 ln -s /etc/apache2/sites-available/vtigercrmapache /etc/apache2/sites-enabled/030-vtiger.conf
 echo '#########################################'
-echo '# Απανεκκίνηση Apache και MySQL         #'
+echo '# Επανεκκίνηση Apache και MySQL         #'
 echo '#                                       #'
 echo '#########################################'
 sleep 3
