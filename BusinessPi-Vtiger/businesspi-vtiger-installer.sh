@@ -62,7 +62,7 @@ echo '# Ενημέρωση συστήματος και εγκατάσταση  #
 echo '#               LAMP                    #'
 echo '#########################################'
 sleep 3
-apt-get update && apt-get -y upgrade && apt-get -y install apache2 libapache2-mod-php5 mysql-server php5-mysql php-apc php5-xmlrpc php-soap php5-gd php5-curl unzip apache2-utils libgd-tools
+apt-get update && apt-get -y upgrade && apt-get -y install apache2 libapache2-mod-php5 mysql-server php5-mysql php5-imap php5-xmlrpc php5-gd php5-curl apache2-utils libgd-tools
 echo '#########################################'
 echo '########      Βήμα 3 απο 5      #########'
 echo '# Ρυθμίσεις ασφαλείας για την MySQL     #'
