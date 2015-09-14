@@ -1,6 +1,6 @@
 /* Base */
 /* #push.height = -#content-sans-footer.margin-bottom = #footer.margin-top + ul.footer-content */
-@import url(http://fonts.googleapis.com/css?family=Raleway|Ubuntu+Mono);
+@import url(https://fonts.googleapis.com/css?family=Ubuntu&subset=greek,latin);
 body,
 html {
     height: 100%;
@@ -18,7 +18,7 @@ h3,
 h4,
 h5,
 h6 {
-    font-family: 'Raleway', Baskerville, Garamond, Georgia, 'DejaVu Serif', 'Times New Roman', Times, Serif;
+    font-family: Ubuntu, Raleway, Baskerville, Garamond, Georgia, 'DejaVu Serif', 'Times New Roman', Times, Serif;
     font-weight: normal;
 }
 h1 small, h1 a, h1 a:hover,
@@ -32,7 +32,7 @@ h6 small, h6 a, h6 a:hover {
 }
 a {
     color: #3875d7;
-    font-family: 'Raleway', 'Monaco', 'Inconsolata', 'Andale Mono', 'Lucida Console', 'Bitstream Vera Sans Mono', 'Courier New', Courier, Monospace;
+    font-family: Ubuntu, Raleway, 'Monaco', 'Inconsolata', 'Andale Mono', 'Lucida Console', 'Bitstream Vera Sans Mono', 'Courier New', Courier, Monospace;
 }
 hr {
     border-width: 3px;
@@ -40,7 +40,7 @@ hr {
 
 /* site title */
 .site-name {
-    font-family: 'Raleway', 'Monaco', 'Inconsolata', 'Andale Mono', 'Lucida Console', 'Bitstream Vera Sans Mono', 'Courier New', Courier, Monospace;
+    font-family: Ubuntu, Raleway, 'Monaco', 'Inconsolata', 'Andale Mono', 'Lucida Console', 'Bitstream Vera Sans Mono', 'Courier New', Courier, Monospace;
 }
 /* Top navigation menu */
 .top-menu li a {
@@ -141,7 +141,7 @@ div.highlight {
 }
 /* Tags */
 .list-of-tags {
-    font-family: 'Raleway', 'Helvetica Neue', Helvetica, Arial, Sans-Serif;
+    font-family: Ubuntu, Raleway, 'Helvetica Neue', Helvetica, Arial, Sans-Serif;
     list-style: none;
     margin: 0;
     overflow: hidden;
@@ -168,10 +168,10 @@ div.highlight {
     line-height: 28px;
 }
 .tag-title {
-    font-family: 'Raleway', 'Trebuchet MS', Trebuchet, 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, Sans-Serif;
+    font-family: Ubuntu, Raleway, 'Trebuchet MS', Trebuchet, 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, Sans-Serif;
 }
 .articles-in-tag li {
-    font: 1.1em/1.6em 'Trebuchet MS', Trebuchet, 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, Sans-Serif;
+    font: 1.1em/1.6em Ubuntu, 'Trebuchet MS', Trebuchet, 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, Sans-Serif;
 }
 /* Article */
 article p:not(#list-of-translations):not(#post-share-links) a,
@@ -189,7 +189,7 @@ article div.article-content ul:not(.articles-timeline) a:hover {
     text-shadow: none;
 }
 .article-content, div.recent-posts p {
-    font: 1.2em/1.6em Raleway, 'PT Serif', Georgia, 'Times New Roman', Times, Serif;
+    font: 1.2em/1.6em Ubuntu, Raleway, 'PT Serif', Georgia, 'Times New Roman', Times, Serif;
     text-align: justify;
 }
 .article-content {
@@ -220,7 +220,7 @@ article div.article-content ul:not(.articles-timeline) a:hover {
     position:absolute;
 }
 .article-content blockquote {
-    font-family: 'Raleway', 'Helvetica Neue', Helvetica, Arial, Sans-Serif;
+    font-family: Ubuntu, Raleway, 'Helvetica Neue', Helvetica, Arial, Sans-Serif;
     font-size: inherit;
     font-variant: normal;
     line-height: 1.7em;
@@ -346,7 +346,7 @@ ul.multi-parts-list li.active-part {
 }
 .table-of-content .toc {
     font-size: .9em;
-    font-family: 'Raleway', 'Monaco', 'Inconsolata', 'Andale Mono', 'Lucida Console', 'Bitstream Vera Sans Mono', 'Courier New', Courier, Monospace;
+    font-family: Ubuntu, Raleway, 'Monaco', 'Inconsolata', 'Andale Mono', 'Lucida Console', 'Bitstream Vera Sans Mono', 'Courier New', Courier, Monospace;
 }
 .last-updated a {
     color: #333;
@@ -402,7 +402,7 @@ a.category-link:hover {
     text-decoration: none;
 }
 a.list-of-categories {
-    font-family: 'Raleway', 'Trebuchet MS', Trebuchet, 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, Sans-Serif;
+    font-family: Ubuntu, Raleway, 'Trebuchet MS', Trebuchet, 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, Sans-Serif;
     font-size: 1.1em;
 }
 a.list-of-categories:hover {
@@ -417,7 +417,7 @@ ul.list-all-articles {
 }
 ul.list-all-articles li {
     border-bottom: 1px dotted #000;
-    font-family: 'Raleway', 'Trebuchet MS', Trebuchet, 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, Sans-Serif;
+    font-family: Ubuntu, Raleway, 'Trebuchet MS', Trebuchet, 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, Sans-Serif;
     font-size: 1.1em;
     padding: .3em 0;
     overflow: auto;
@@ -425,7 +425,7 @@ ul.list-all-articles li {
 ul.list-all-articles li time {
     color: #AAA;
     float: right;
-    font-family: 'Raleway', 'PT Sans', 'Helvetica Neue', Arial, Sans-Serif;
+    font-family: Ubuntu, Raleway, 'PT Sans', 'Helvetica Neue', Arial, Sans-Serif;
     font-size: .9em;
 }
 div.blog-archives h2 {
@@ -582,7 +582,7 @@ a#allposts:hover {
 }
 /* Helper CSS classes */
 .amp {
-    font-family: 'Raleway', 'Warnock Pro', 'Goudy Old Style', 'Palatino', 'Book Antiqua', Serif;
+    font-family: Ubuntu, Raleway, 'Warnock Pro', 'Goudy Old Style', 'Palatino', 'Book Antiqua', Serif;
     font-style: italic;
 }
 /* Use following classes to add floating images to your post */

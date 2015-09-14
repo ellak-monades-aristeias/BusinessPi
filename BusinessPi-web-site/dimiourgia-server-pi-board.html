@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <meta charset="utf-8"> 
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="author" content="Salih Emin" />
+        <meta name="copyright" content="Salih Emin" />
+
+        <meta name="description" content="Ο oδηγός απευθύνεται σε όσους επιθυμούν να αγοράσουν τον παρόμοιο εξοπλισμό και να εγκαταστήσουν το λογισμικό που περιλαμβάνεται στο BusinessPi
+" />
+        <meta property="og:type" content="article" />
+        <meta name="twitter:card" content="summary">
+
+<meta name="keywords" content="single-board-computing, ssh, mysql, static-ip, vtiger, domain-name, Documentation, " />
+
+<meta property="og:title" content="Δημιουργία εταιρικού διακομιστή σε Single Board Computer (Pi board) "/>
+<meta property="og:url" content="./dimiourgia-server-pi-board.html" />
+<meta property="og:description" content="Ο oδηγός απευθύνεται σε όσους επιθυμούν να αγοράσουν τον παρόμοιο εξοπλισμό και να εγκαταστήσουν το λογισμικό που περιλαμβάνεται στο BusinessPi" />
+<meta property="og:site_name" content="BusinessPi" />
+<meta property="og:article:author" content="Salih Emin" />
+<meta property="og:article:published_time" content="2015-09-13T18:30:00+03:00" />
+<meta property="" content="2015-09-13T18:58:00+03:00" />
+<meta name="twitter:title" content="Δημιουργία εταιρικού διακομιστή σε Single Board Computer (Pi board) ">
+<meta name="twitter:description" content="Ο oδηγός απευθύνεται σε όσους επιθυμούν να αγοράσουν τον παρόμοιο εξοπλισμό και να εγκαταστήσουν το λογισμικό που περιλαμβάνεται στο BusinessPi">
+
+        <title>Δημιουργία εταιρικού διακομιστή σε Single Board Computer (Pi board)  · BusinessPi
+</title>
+<!--	<link rel="stylesheet" type="text/css" href="./theme/css/bootstrap-combined.min.css" media="screen">-->
+<!--	<link rel="stylesheet" type="text/css" href="./theme/css/font-awesome.css" media="screen"> -->
+        <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet">
+        <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.1/css/font-awesome.css" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="./theme/css/pygments.css" media="screen">
+        <link rel="stylesheet" type="text/css" href="./theme/tipuesearch/tipuesearch.css" media="screen">
+        <link rel="stylesheet" type="text/css" href="./theme/css/elegant.css" media="screen">
+        <link rel="stylesheet" type="text/css" href="./theme/css/custom.css" media="screen">
+        <link href="http://businesspi.github.io/feeds/all.rss.xml" type="application/atom+xml" rel="alternate" title="BusinessPi - Full Atom Feed" />
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+     (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+     m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+     })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-67310740-1', 'auto');
+    ga('send', 'pageview');
+</script>
+    </head>
+    <body>
+        <div id="content-sans-footer">
+        <div class="navbar navbar-static-top">
+            <div class="navbar-inner">
+                <div class="container-fluid">
+                    <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </a>
+                    <a class="brand" href="./"><span class=site-name>BusinessPi</span></a>
+                    <div class="nav-collapse collapse">
+                        <ul class="nav pull-right top-menu">
+                            <li ><a href=".">Home</a></li>
+                            <li ><a href="./pages/downloads.html">Downloads</a></li>
+                            <li ><a href="./pages/feedback.html">Feedback</a></li>
+                            <li ><a href="./categories.html">Categories</a></li>
+                            <li ><a href="./tags.html">Tags</a></li>
+                            <li ><a href="./archives.html">Archives</a></li>
+                            <li><form class="navbar-search" action="./search.html" onsubmit="return validateForm(this.elements['q'].value);"> <input type="text" class="search-query" placeholder="Search" name="q" id="tipue_search_input"></form></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid">
+            <div class="row-fluid">
+                <div class="span1"></div>
+                <div class="span10">
+<article>
+<div class="row-fluid">
+    <header class="page-header span10 offset2">
+    <h1><a href="./dimiourgia-server-pi-board.html"> Δημιουργία εταιρικού διακομιστή σε Single Board Computer (Pi board)  </a></h1>
+    </header>
+</div>
+
+<div class="row-fluid">
+    <div class="span2 table-of-content">
+        <nav>
+        <h4>Contents</h4>
+        <div class="toc">
+<ul>
+<li><a href="#pi-board">Δημιουργία εταιρικού διακομιστή σε Pi board</a><ul>
+<li><a href="#_1">Εισαγωγή</a></li>
+<li><a href="#_2">Υλικό</a><ul>
+<li><a href="#board">Board</a></li>
+<li><a href="#_3">Παρελκόμενα</a></li>
+</ul>
+</li>
+<li><a href="#_4">Λειτουργικό Σύστημα</a></li>
+<li><a href="#_5">Υπηρεσίες</a></li>
+<li><a href="#_6">Λογισμικό</a><ul>
+<li><a href="#_7">Αυτόματη εγκατάσταση</a></li>
+<li><a href="#_8">Χειροκίνητη εγκατάσταση</a></li>
+</ul>
+</li>
+<li><a href="#_9">Επίλογος</a></li>
+</ul>
+</li>
+</ul>
+</div>
+        </nav>
+    </div>
+    <div class="span8 article-content">
+
+            
+            <html><body>
+<p><img alt="pi-board-full-equip" src="./images/pi-board-full-equip.jpg" style="width: 400px; height: auto;"/> </p>
+<p>Στο προηγούμενο άρθρο κάναμε μια εισαγωγή στο τι είναι το BusinessPi και είδαμε τεχνικές λεπτομέρειες σχετικά με το Hardware του. Μπορείτε να τα διαβάσετε στις παρακάτω αναρτήσεις: </p>
+<ul>
+<li><a href="./ti-einai-to-businesspi.html">Τι είναι το BusinessPi</a></li>
+<li><a href="./hardware-dokimon.html">Hardware δοκιμών</a></li>
+<li><a href="./leitourgiko-upiresies-logismiko.html">Λειτουργικό Σύστημα, Υπηρεσίες παρασκηνίου και Λογισμικό</a></li>
+<li><a href="./diathesimi-gia-lipsi-1504-1.html">Διαθέσιμη η έκδοση 15.04-1 του BussinessPi για λήψη</a></li>
+<li><a href="./sindesi-egkatastasi-businesspi.html">Σύνδεση BananaPi και εγκατάσταση του BusinessPi</a></li>
+</ul>
+<hr/>
+<h1 id="pi-board">Δημιουργία εταιρικού διακομιστή σε Pi board</h1>
+<p>Η ενότητα αυτή περιλαμβάνει όλα όσα χρειάζεται να γνωρίζει ο αναγνώστης σχετικά με την "κλωνοποίηση" του έργου BusinessPi. </p>
+<p>Απευθύνεται με λίγα λόγια σε όσους επιθυμούν να αγοράσουν τον ίδιο ή παρεμφερή εξοπλισμό, να εγκαταστήσουν συμβατή διανομή και να εγκαταστήσουν το λογισμικό που περιλαμβάνεται στο BusinessPi με στόχο την δημιουργία χαμηλού κόστους εταιρικού διακομιστή για την νεοφυή εταιρεία τους.</p>
+<h2 id="_1">Εισαγωγή</h2>
+<p>Παρότι η αρχιτεκτονική των <a href="https://en.wikipedia.org/wiki/Single-board_computer">Single-board computer</a> υπολογιστικών συστημάτων είναι αρκετά παλιά, εντούτοις άρχισε να γίνεται εκτεταμένη η χρήση τους τα τελευταία 5 χρόνια σε εκπαιδευτικούς οργανισμούς, ερευνητικά κέντρα αλλά και επιχειρήσεις. </p>
+<p>Ο λόγος ήταν η ευρεία αποδοχή του <a href="https://en.wikipedia.org/wiki/Raspberry_Pi#History">RaspberyPi</a> ("ο υπολογιστής των 25$") από την κοινότητα ΕΛ/ΛΑΚ αλλά και η παράλληλες εξελίξεις της αρχιτεκτονικής των ARM επεξεργαστών στα smartphone. Στα τελευταία, η τεχνολογική ανάπτυξη στον τομέα των <a href="https://en.wikipedia.org/wiki/System_on_a_chip">SoC</a> οδήγησε στην παράλληλη αύξηση των επιδόσεων και την μείωση του κόστους του τελικού προϊόντος. </p>
+<p>Έτσι σήμερα έχουμε μια ευρεία γκάμα από χαμηλού κόστους, σε σχέση με τους παραδοσιακούς υπολογιστές PC, και αρκετά υψηλών επιδόσεων Single-board computers τα οποία μπορεί ο αναγνώστης να μελετήσει, να συγκρίνει και να επιλέξει αυτό που θα καλύψει τις ανάγκες της δικής του επιχείρισης. </p>
+<p>Είναι σίγουρο ότι στο προσεχές διάστημα οι εξελίξεις αλλά και νέες εκδόσεις των Single-board computers θα παρέχουν μεγαλύτερες επιδόσεις σε χαμηλό κόστος και θα γίνει ακόμα πιο διαδεδομένη η χρήση τους σε επιχειρηματικό περιβάλλον μιας και ιδιαίτερα για τις νεοφυής επιχειρήσεις το διαθέσιμο κεφάλαιο εκκίνησης είναι χαμηλό.</p>
+<h2 id="_2">Υλικό</h2>
+<p>Το υλικό που απαιτείται για να δημιουργήσετε έναν μικρό εταιρικό διακομιστή βασισμένο σε Single-board computer (ή Pi Board για συντομία) αποτελείται από:</p>
+<ul>
+<li>Board</li>
+<li>Παρελκόμενα </li>
+</ul>
+<h3 id="board">Board</h3>
+<p>Στην παγκόσμια αγορά κυκλοφορούν Pi Boards που διαφέρουν κυρίως στις επιδόσεις του επεξεργαστή και της μνήμης. Παρότι σήμερα ήδη έχουμε Pi Boards με τετραπύρηνους επεξεργαστές και 1 GB μνήμης RAM, απο τις εξελίξεις στον τομέα των SoC διαφαίνεται ότι θα υπάρχουν περισσότερες εναλλακτικές διαθέσιμες. Ένας εκτενείς συγκριτικός πίνακας βρίσκεται στην σελίδα : <a href="https://en.wikipedia.org/wiki/Comparison_of_single-board_computers">https://en.wikipedia.org/wiki/Comparison_of_single-board_computers</a></p>
+<p>Για τους σκοπούς του έργου BusinessPi, αφού αποκλείσαμε κάποια μοντέλα (λόγοι κόστους/διαθεσιμότητας/επιδόσεων) επιλέξαμε και συγκρίναμε τα board που εμφανίζονται στον παρακάτω πίνακα. Προτείνουμε στον αναγνώστη να επιλέξει αυτό που θα καλύψει τις δικές του ανάγκες  (Σημείωση η τιμή κόστους είναι ενδεικτική) </p>
+<p><img alt="comparison-piboards" src="./images/comparison-piboards.jpg" style="width: 807px; height: auto;"/></p>
+<h3 id="_3">Παρελκόμενα</h3>
+<p>Συνήθως η αγορά του Board δεν περιλαμβάνει κάποιες βασικές επεκτάσεις τις οποίες θα πρέπει να τις αοράσουμε ξεχωριστά:</p>
+<p><strong>Απαραίτητα είναι</strong>:
+- Καλώδιο δικτύου
+- Κάρτα SD
+- Τροφοδοσία ρεύματος</p>
+<p><strong>Προαιρετικά</strong> ανάλογα με τα χαρακτηριστικά του μοντέλου:
+- Καλώδιο HDMI/VGA για σύνδεση σε οθόνη
+- Καλώδιο SATA για σύνδεση με δίσκο SATA
+- Καλώδιο εξόδου για ηχεία
+- USB Hub για σύνδεση πληκτρολογίου/ποντικιού</p>
+<p>Για όλα τα παραπάνω είναι απαραίτητη η προσεκτική ανάγνωση των προδιαγραφών που θέτει ο κατασκευαστής (ιδιαίτερα για την παροχή ρεύματος) ώστε το borad μας να λειτουργεί αξιόπιστα και αδιάλειπτα.  </p>
+<h2 id="_4">Λειτουργικό Σύστημα</h2>
+<p>Το λειτουργικό σύστημα που υποστηρίζουν τα διαθέσιμα board της αγοράς, είναι στην πλειοψηφία τους βασισμένα στο Linux. Συγκεκριμένα, αποτελούν εξειδικευμένη και τροποποιημένη έκδοση κάποιας από τις γνωστότερες διανομές Linux που προορίζονται για τους κοινούς υπολογιστές.  </p>
+<p>Λόγο της αρχιτεκτονικής των board (ARM επεξεργαστές) δεν μπορούμε να εγκαταστήσουμε διανομή Desktop χωρίς προσαρμογές και μεταγλώττιση του πηγαίου κώδικα για την αρχιτεκτονική του board μας. Παρόλα αυτά οι κατασκευαστές των board αλλά και οι κοινότητα ΕΛ/ΛΛΑΚ έχουν μεταφέρει αρκετές διανομές και μπορούμε να τις εγκαταστήσουμε από την σελίδα του κατασκευαστή ή από την αντίστοιχη κοινότητα του board.</p>
+<p>Οι δύο πιο διαδεδομένες διανομές που θα βρούμε εκδόσεις τους διαθέσιμες για όλα σχεδόν τα board είναι αυτές που βασίζονται στο Ubuntu και το Debian. </p>
+<p>Αν παρόλα αυτά ο αναγνώστης επιθυμεί να εγκαταστήσει κάποια άλλη διανομή Linux στον εταιρικό του διακομιστή βασισμένο σε Pi board, θα θέλαμε να επιστήσουμε την προσοχή του στο να διαλέξει κάποια που έχει και εταιρική παρουσία ετών στον χώρο των διακομιστών. </p>
+<p>Έτσι οι διανομές βασισμένες σε Debian, Ubuntu, CentOS είναι αξιόπιστες για χρήση σε εταιρικό περιβάλλον, μιας και διαθέτουν εταιρική παρουσία σε τομείς όπως Servers, Workstations, Cloud Infrastracture και Workstations. Με αυτό τον τρόπο αποκλείονται προβλήματα συμβατότητας με εταιρικά λογισμικά, κρίσιμα προβλήματα λογισμικού και κενά ασφαλείας, μιας και οι διανομές αυτές λόγο και της εταιρικής παρουσίας τους εκδίδουν σύντομα και συχνά διορθώσεις λογισμικού και κενών ασφαλείας. </p>
+<p>Ενδεικτικά, για τους σκοπούς του έργου, το BusinessPi είναι βασισμένο σε μια ειδική διανομή (Bananian) βασισμένη στο Debian. (βλέπε <a href="./leitourgiko-upiresies-logismiko.html">Λειτουργικό σύστημα</a>)</p>
+<p>Για την εγκατάσταση του λειτουργικού συστήματος θα χρειαστεί να κάνετε λήψη συνήθως μιας προρυθμισμένης εικόνας δίσκου (Image disk) που είναι προσαρμοσμένη για το board σας. Έπειτα μπορείτε να το κάντε εγκατάσταση στο board σας όπως περιγράφεται στον οδηγό <a href="./sindesi-egkatastasi-businesspi.html">Εγκατάσταση Λειτουργικού</a>. </p>
+<h2 id="_5">Υπηρεσίες</h2>
+<p>Η επόμενη κρίσιμη απόφαση που πρέπει να λάβει ο αναγνώστης είναι τον ρόλο που θα αναθέσει στον εταιρικό διακομιστή. Ο διακομιστής θα παρέχει στο εταιρικό δίκτυο, ειδικού σκοπού υπηρεσίες, που περιλαμβάνουν συνήθως μια ή παραπάνω από τις παρακάτω εργασίες:</p>
+<ul>
+<li>Διαχείριση Εταιρικών mail</li>
+<li>Διαμοιρασμός Αρχείων με κοινόχρηστους φακέλους</li>
+<li>Εκτέλεση εταιρικών λογισμικών (ήτοι CRM)</li>
+</ul>
+<p>Ιδιαίτερη προσοχή πρέπει να δοθεί στην περίπτωσή των Pi board το γεγονός ότι ανάλογα με τον αριθμό χρηστών που θα χρησιμοποιούν τις υπηρεσίες του διακομιστή αυξάνονται και οι απαιτήσεις σε επιδόσεις. Οπότε θα πρέπει αν γίνει προσεκτική μελέτη και προγραμματισμός για το ποιες υπηρεσίες θα παρέχονται μέσω του Pi Board και πως (χρήση εξωτερικού δίσκου SATA, χρήση <a href="https://en.wikipedia.org/wiki/Network-attached_storage">NAS</a> κλπ.).</p>
+<p>Ενδεικτικά, για τους σκοπούς του έργου, το BusinessPi παρέχει υπηρεσίες Web Server (Apache) με βάση δεδομένων (MySQL) και SSH server για να μπορέσετε να συνδέεστε από τον υπολογιστή σας απομακρυσμένα. (βλέπε <a href="./leitourgiko-upiresies-logismiko.html">Λειτουργικό σύστημα</a>)</p>
+<p>Πριν προχωρήστε παρακαλούμε μελετήστε τον οδηγό (βλέπε <a href="./sindesi-egkatastasi-businesspi.html">Εγκατάσταση</a>) μιας και πολλά σημεία του για λόγους αποφυγής επανάληψης δεν θα αναφερθούν εδώ. </p>
+<h2 id="_6">Λογισμικό</h2>
+<p>Ανάλογα με την υπηρεσία που θα διεκπεραιώνει ο διακομιστής θα πρέπει να εγκατασταθούν οι απαραίτητες βιβλιοθήκες του συστήματος αλλά και τα λογισμικά για την υποστήριξη, καταγραφή και παρακολούθηση του λειτουργικού συστήματος.</p>
+<p>Ενδεικτικά, για τους σκοπούς του έργου, το BusinessPi είναι ρυθμισμένο να παρέχει το εταιρικό λογισμικό Vtiger CRM. (βλέπε <a href="./leitourgiko-upiresies-logismiko.html">Λειτουργικό σύστημα</a>)</p>
+<p>Η εγκατάσταση του λογισμικού αυτού μπορεί να γίνει με δυο τρόπους:</p>
+<ul>
+<li>Αυτοματοποιημένα</li>
+<li>Χειροκίνητα</li>
+</ul>
+<h3 id="_7">Αυτόματη εγκατάσταση</h3>
+<p>Για την εγκατάσταση των λογισμικών που παρέχονται όπως και στο BusinessPi αναπτύχθηκε ένα λογισμικό αυτόματης εγκατάστασης. </p>
+<p>Το λογισμικό αυτό είναι συμβατό με διανομές που βασίζονται στο <strong>Debian</strong> ή το <strong>Ubuntu</strong>.</p>
+<p>Για την χρήση του θα χρειαστεί να έχετε εγκατεστημένα δυο λογισμικά στο σύστημά σας: </p>
+<ul>
+<li><strong>Wget</strong> (π.χ. sudo apt-get install wget)</li>
+<li><strong>Unzip</strong> (π.χ. sudo apt-get install unzip)</li>
+</ul>
+<p>Επομένως συνδεθείτε στο board σας :</p>
+<div class="highlight"><pre>ssh user@ip-οf-board
+</pre></div>
+<p>Όπου <strong>user</strong> είναι το προεπιλεγμένο όνομα του χρήστη της διανομής που επιλέξατε και κάνατε εγκατάσταση και το <strong>ip-οf-board</strong> είναι η IP του board σας όπως διαβάσατε στον οδηγό <a href="./sindesi-egkatastasi-businesspi.html">Εύρεση IP</a></p>
+<p>Έπειτα θα πρέπει να κάντε λήψη του λογισμικού αυτόματης εγκατάστασης:</p>
+<div class="highlight"><pre>wget https://github.com/BusinessPi/vtiger-installer/archive/master.zip
+</pre></div>
+<p>Εξάγετε το περιεχόμενο του αρχείου zip:</p>
+<div class="highlight"><pre>unzip master.zip
+</pre></div>
+<p>Εισέλθετε στον φάκελο vtiger-installer-master</p>
+<div class="highlight"><pre>cd vtiger-installer-master
+</pre></div>
+<p>Εκτελέστε τον αυτόματο εγκαταστάτη</p>
+<div class="highlight"><pre>sudo ./businesspi-vtiger-installer.sh
+</pre></div>
+<p>Μόλις ξεκινήσει θα δείτε την παρακάνω εικόνα</p>
+<p><img alt="businesspi-vtigerinstaller" src="./images/businesspi-vtigerinstaller.jpg" style="width: 576px; height: auto;"/></p>
+<p>Μετά απο 5 δευτερόλεπτα θα ξεκινήσει ενημέρωση του συστήματος, ρύθμιση παραμέτρων διευθυνσιοδότησης και εγκατάστασης υπηρεσιών Web Server και MySQL </p>
+<p>Κατά την εγκατάσταση της MySQL θα χρειαστεί να θέσετε ένα ασφαλές συνθηματικό για τον χρήστη <strong>root</strong> της MySQL (Προσοχή δεν είναι ο χρήστης root του συστήματος)</p>
+<p><img alt="mysql-password" src="./images/mysql-password.jpg" style="width: 600px; height: auto;"/></p>
+<p>Έπειτα θα σας ζητηθεί να βάλετε το συνθηματικό root που θέσατε για την MySQL ώστε να εκτελεστεί ο οδηγός ασφάλειας MySQL. Στην ερώτηση αλλαγής συνθηματικού <strong>root</strong> απαντήστε αρνητικά ενώ στα υπόλοιπα καταφατικά</p>
+<p><img alt="mysql-seccurity" src="./images/mysql-seccurity.jpg" style="width: 400px; height: auto;"/></p>
+<p>Στη συνέχεια θα γίνει αυτόματα η λήψη, αποσυμπίεση και ρύθμιση παραμέτρων εγκατάστασης του Vtiger CRM.
+Μόλις ολοκληρωθούν τα βήματα του λογισμικού αυτόματης εγκατάστασης θα δείτε το μήνυμα : </p>
+<blockquote>
+<p>Τώρα θα πρέπει να ρυθμίσετε τον υπολογιστή σας στο host αρχείο του να μεταφράζει το http://vtiger.businesspi.local στην IP που έχει λάβει (ή θέσατε εσείς) για να να συνδεθείτε στο Vtiger</p>
+</blockquote>
+<p>Επομένως τώρα μπορείτε με βάση τις οδηγίες <a href="./sindesi-egkatastasi-businesspi.html">Ρυθμιση Στατικής IP και Domain</a> να συνδεθείτε στο Vtiger CRM του board σας. </p>
+<p>Αφού συνδεθείτε από τον browser του υπολογιστή σας στο <a href="http://vtiger.businesspi.local">http://vtiger.businesspi.local</a> ακολουθήστε τις οδηγίες Ρύθμισης του vtiger που είδαμε στο προϊγούμενο άρθρο.</p>
+<h3 id="_8">Χειροκίνητη εγκατάσταση</h3>
+<p>Αφού συνδεθείτε στο board σας ενημερώστε το σύστημά σας:</p>
+<div class="highlight"><pre>sudo apt-get update &amp;&amp; sudo apt-get -y upgrade
+</pre></div>
+<p>Αλλάξτε το Hostname του συστήματος σε <strong>vtiger</strong> </p>
+<div class="highlight"><pre>sudo cp /etc/hostname /etc/hostname.origin
+sudo echo 'vtiger' &gt; /etc/hostname
+</pre></div>
+<p>και το domain σε <strong>vtiger.businesspi.local</strong> ώστε το board σας να διαθέτει <a href="https://en.wikipedia.org/wiki/Fully_qualified_domain_name">FQDN</a></p>
+<div class="highlight"><pre>sudo nano /etc/hosts
+
+127.0.0.1   localhost.localdomain   localhost
+127.0.1.1       vtiger.businesspi.local vtiger
+::1     localhost ip6-localhost ip6-loopback
+fe00::0     ip6-localnet
+ff00::0     ip6-mcastprefix
+ff02::1     ip6-allnodes
+ff02::2     ip6-allrouters
+</pre></div>
+<p>Ενεργοποιείστε τις νέες ρυθμίσεις</p>
+<div class="highlight"><pre>invoke-rc.d hostname.sh start
+</pre></div>
+<p>Ελέγξτε οτι είναι σωστές με την παρακάτω εντολή να επιστέφει <strong>vtiger.businesspi.local</strong></p>
+<div class="highlight"><pre>hostname -f
+</pre></div>
+<p>Εγκαταστήστε τις υπηρεσίες Apache, MySQL και τις απαραίτητες για το Vtiger βιβλιοθήκες:</p>
+<div class="highlight"><pre>sudo apt-get -y install apache2 libapache2-mod-php5 mysql-server php5-mysql php5-imap php5-xmlrpc php5-gd php5-curl apache2-utils libgd-tools
+</pre></div>
+<p>Εκτελέστε τον οδηγό ασφάλειας MySQL και απαντήστε στις ερωτήσεις</p>
+<div class="highlight"><pre>sudo mysql_secure_installation
+</pre></div>
+<p>Κάντε λήψη το Vtiger CRM 6.3.0</p>
+<div class="highlight"><pre>wget http://sourceforge.net/projects/vtigercrm/files/vtiger%20CRM%206.3.0/Core%20Product/vtigercrm6.3.0.tar.gz
+</pre></div>
+<p>Καντε εξαγωγή του αρχείου, μεταφορά στον φάκελο του webserver και ρυθμίστε τα δικαιώματα χρήσης και εκτέλεσής του από τον Web Server</p>
+<div class="highlight"><pre>tar -xvzf vtigercrm6.3.0.tar.gz
+rm /var/www/index.html
+mv vtigercrm /var/www/vtigercrm
+chmod -R 775 /var/www/vtigercrm
+chown -R www-data:www-data /var/www/vtigercrm
+</pre></div>
+<p>Ρυθμίστε την PHP με βάση τις προδιαγραφές που απαιτούνται απο το Vtiger CRM <a href="https://wiki.vtiger.com/index.php/Installation_with_LAMP">βλέπε Vtiger PHP Configuration</a></p>
+<div class="highlight"><pre>sudo cp /etc/php5/apache2/php.ini /etc/php5/apache2/php.ini.origin
+sudo nano /etc/php5/apache2/php.ini
+</pre></div>
+<p>Δημιουργήστε και ρυθμίστε το vhost αρχείο <strong>vtigercrmapache</strong> για Vtiger </p>
+<div class="highlight"><pre>sudo nano /etc/apache2/sites-available/vtigercrmapache
+
+
+<span class="nt">&lt;VirtualHost</span> <span class="err">*:80</span><span class="nt">&gt;</span>
+    ServerName vtiger.businesspi.local
+    DocumentRoot /var/www/vtigercrm
+    <span class="nt">&lt;Directory</span> <span class="err">/var/www/vtigercrm</span><span class="nt">&gt;</span>
+                Options FollowSymLinks
+                AllowOverride None
+    <span class="nt">&lt;/Directory&gt;</span>
+    # Possible vaues include: debug, info, notice, warn, error, crit,
+    # alert, emerg.
+    LogLevel warn
+    ErrorLog /var/log/apache2/vtigercrm-error.log
+    CustomLog /var/log/apache2/vtigercrm-access.log combined
+    ServerSignature Off
+
+<span class="nt">&lt;/VirtualHost&gt;</span>
+</pre></div>
+<p>Αφού αποθηκεύσετε και κλείσετε το αρχείο, ενεργοποιείστε το νέο vhost και απενεργοποιήστε τον προεπιλεγμένο του apache</p>
+<div class="highlight"><pre>sudo a2ensite vtigercrmapache 
+sudo a2dissite 000-default
+</pre></div>
+<p>Κάντε επανεκκίνηση των υπηρεσιών Apache και MySQL</p>
+<div class="highlight"><pre>sudo service apache2 restart 
+sudo service mysql restart
+</pre></div>
+<p>Επομένως τώρα μπορείτε με βάση τις οδηγίες <a href="./sindesi-egkatastasi-businesspi.html">Ρυθμιση Στατικής IP και Domain</a> να συνδεθείτε στο Vtiger CRM του board σας. </p>
+<p>Αφού συνδεθείτε από τον browser του υπολογιστή σας στο <a href="http://vtiger.businesspi.local">http://vtiger.businesspi.local</a> ακολουθήστε τις οδηγίες Ρύθμισης του vtiger που είδαμε στο προϊγούμενο άρθρο.</p>
+<h2 id="_9">Επίλογος</h2>
+<p>Η αγορά του Pi Board και του περιφερικού εξοπλισμού, για εταιρικές ανάγκες, δεν πρέπει να ξεπερνά τα 100 ευρώ. Ο δε χρόνος εγκατάστασης του λειτουργικού, η ρύθμιση των υπηρεσιών και των λογισμικών, με τις οδηγίες που περιλαμβάνονται σε αυτό το wiki και ανάλογα με την τεχνογνωσία του αντικειμένου αλλά και την προσωπική του εμπειρία του αναγνώστη δεν θα χρειαστεί να είναι παραπάνω από περίπου 1-2 ώρες.</p></body></html>
+            <section>
+    <p id="post-share-links">
+    Share on:
+    <a href="http://twitter.com/home?status=%CE%94%CE%B7%CE%BC%CE%B9%CE%BF%CF%85%CF%81%CE%B3%CE%AF%CE%B1%20%CE%B5%CF%84%CE%B1%CE%B9%CF%81%CE%B9%CE%BA%CE%BF%CF%8D%20%CE%B4%CE%B9%CE%B1%CE%BA%CE%BF%CE%BC%CE%B9%CF%83%CF%84%CE%AE%20%CF%83%CE%B5%20Single%20Board%20Computer%20%28Pi%20board%29%20http%3A//businesspi.github.io/dimiourgia-server-pi-board.html" target="_blank" title="Share on Twitter">Twitter</a>
+    ❄
+    <a href="http://www.facebook.com/sharer/sharer.php?s=100&amp;p%5Burl%5D=http%3A//businesspi.github.io/dimiourgia-server-pi-board.html" target="_blank" title="Share on Facebook">Facebook</a>
+    ❄
+    <a href="https://plus.google.com/share?url=http%3A//businesspi.github.io/dimiourgia-server-pi-board.html" target="_blank" title="Share on Google Plus">Google+</a>
+    ❄
+    <a href="mailto:?subject=%CE%94%CE%B7%CE%BC%CE%B9%CE%BF%CF%85%CF%81%CE%B3%CE%AF%CE%B1%20%CE%B5%CF%84%CE%B1%CE%B9%CF%81%CE%B9%CE%BA%CE%BF%CF%8D%20%CE%B4%CE%B9%CE%B1%CE%BA%CE%BF%CE%BC%CE%B9%CF%83%CF%84%CE%AE%20%CF%83%CE%B5%20Single%20Board%20Computer%20%28Pi%20board%29&amp;body=http%3A//businesspi.github.io/dimiourgia-server-pi-board.html" target="_blank" title="Share via Email">Email</a>
+    </p>
+</section>
+
+            
+            <hr/>
+<section>
+    <h2>Related Posts</h2>
+<ul class="related-posts-list">
+<li><a href="./ti-einai-to-businesspi.html" title="Τι είναι το BusinessPi">Τι είναι το BusinessPi</a></li>
+<li><a href="./hardware-dokimon.html" title="Hardware δοκιμών">Hardware δοκιμών</a></li>
+<li><a href="./leitourgiko-upiresies-logismiko.html" title="Λειτουργικό Σύστημα, Υπηρεσίες παρασκηνίου και Λογισμικό">Λειτουργικό Σύστημα, Υπηρεσίες παρασκηνίου και Λογισμικό</a></li>
+<li><a href="./sindesi-egkatastasi-businesspi.html" title="Σύνδεση BananaPi και εγκατάσταση του BusinessPi">Σύνδεση BananaPi και εγκατάσταση του BusinessPi</a></li>
+</ul>
+<hr />
+</section>
+        </div>
+        <section>
+        <div class="span2" style="float:right;font-size:0.9em;">
+            <h4>Published</h4>
+            <time pubdate="pubdate" datetime="2015-09-13T18:30:00+03:00">Sep 13, 2015</time>
+
+<h4>Last Updated</h4>
+<time datetime="2015-09-13T18:58:00+03:00">Sep 13, 2015</time>
+
+            <h4>Category</h4>
+            <a class="category-link" href="./categories.html#documentation-ref">Documentation</a>
+            <h4>Tags</h4>
+            <ul class="list-of-tags tags-in-article">
+                <li><a href="./tags.html#domain-name-ref">domain-name
+                    <span>2</span>
+</a></li>
+                <li><a href="./tags.html#mysql-ref">mysql
+                    <span>2</span>
+</a></li>
+                <li><a href="./tags.html#single-board-computing-ref">single-board-computing
+                    <span>5</span>
+</a></li>
+                <li><a href="./tags.html#ssh-ref">ssh
+                    <span>2</span>
+</a></li>
+                <li><a href="./tags.html#static-ip-ref">static-ip
+                    <span>2</span>
+</a></li>
+                <li><a href="./tags.html#vtiger-ref">vtiger
+                    <span>3</span>
+</a></li>
+            </ul>
+<h4>Contact</h4>
+    <a href="https://plus.google.com/+Salihemin" title="My Google-Plus Profile" class="sidebar-social-links" target="_blank">
+    <i class="fa fa-google-plus sidebar-social-links"></i></a>
+    <a href="https://twitter.com/cerebrux" title="My Twitter Profile" class="sidebar-social-links" target="_blank">
+    <i class="fa fa-twitter sidebar-social-links"></i></a>
+    <a href="https://github.com/cerebrux" title="My Github Profile" class="sidebar-social-links" target="_blank">
+    <i class="fa fa-github sidebar-social-links"></i></a>
+    <a href="https://www.linkedin.com/in/salihemin" title="My linkedin Profile" class="sidebar-social-links" target="_blank">
+    <i class="fa fa-linkedin sidebar-social-links"></i></a>
+        </div>
+        </section>
+</div>
+</article>
+                </div>
+                <div class="span1"></div>
+            </div>
+        </div>
+        <div id="push"></div>
+    </div>
+<footer>
+<div id="footer">
+    <ul class="footer-content">
+        <li class="elegant-license"><a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Άδεια Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a><br /> Το έργο με τίτλο <span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text" property="dct:title" rel="dct:type">BusinessPi</span> από τον δημιουργό <a xmlns:cc="http://creativecommons.org/ns#" href="https://github.com/ellak-monades-aristeias/BusinessPi/wiki" property="cc:attributionName" rel="cc:attributionURL">Salih Emin</a> διατίθεται με την άδεια <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Αναφορά Δημιουργού - Μη Εμπορική Χρήση - Παρόμοια Διανομή 4.0 Διεθνές </a>.</li>
+        <li class="elegant-power">Powered by <a href="http://getpelican.com/" title="Pelican Home Page">Pelican</a>. Theme: <a href="http://oncrashreboot.com/pelican-elegant" title="Theme Elegant Home Page">Elegant</a> by <a href="http://oncrashreboot.com" title="Talha Mansoor Home Page">Talha Mansoor</a></li>
+    </ul>
+</div>
+</footer>            <script src="http://code.jquery.com/jquery.min.js"></script>
+        <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+        <script>
+            function validateForm(query)
+            {
+                return (query.length > 0);
+            }
+        </script>
+
+    
+    </body>
+    <!-- Theme: Elegant built for Pelican
+    License : http://oncrashreboot.com/pelican-elegant -->
+</html>

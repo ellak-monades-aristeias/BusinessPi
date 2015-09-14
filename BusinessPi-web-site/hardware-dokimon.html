@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <meta charset="utf-8"> 
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="author" content="Salih Emin" />
+        <meta name="copyright" content="Salih Emin" />
+
+        <meta name="description" content="Παρουσίαση του Hardware δοκιμών για την υλοποίηση του BusinessPi
+" />
+        <meta property="og:type" content="article" />
+        <meta name="twitter:card" content="summary">
+
+<meta name="keywords" content="hardware, single-board-computing, bananapi-m1, Documentation, " />
+
+<meta property="og:title" content="Hardware δοκιμών "/>
+<meta property="og:url" content="./hardware-dokimon.html" />
+<meta property="og:description" content="Παρουσίαση του Hardware δοκιμών για την υλοποίηση του BusinessPi" />
+<meta property="og:site_name" content="BusinessPi" />
+<meta property="og:article:author" content="Salih Emin" />
+<meta property="og:article:published_time" content="2015-09-09T17:14:00+03:00" />
+<meta property="" content="2015-09-09T17:25:00+03:00" />
+<meta name="twitter:title" content="Hardware δοκιμών ">
+<meta name="twitter:description" content="Παρουσίαση του Hardware δοκιμών για την υλοποίηση του BusinessPi">
+
+        <title>Hardware δοκιμών  · BusinessPi
+</title>
+<!--	<link rel="stylesheet" type="text/css" href="./theme/css/bootstrap-combined.min.css" media="screen">-->
+<!--	<link rel="stylesheet" type="text/css" href="./theme/css/font-awesome.css" media="screen"> -->
+        <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet">
+        <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.1/css/font-awesome.css" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="./theme/css/pygments.css" media="screen">
+        <link rel="stylesheet" type="text/css" href="./theme/tipuesearch/tipuesearch.css" media="screen">
+        <link rel="stylesheet" type="text/css" href="./theme/css/elegant.css" media="screen">
+        <link rel="stylesheet" type="text/css" href="./theme/css/custom.css" media="screen">
+        <link href="http://businesspi.github.io/feeds/all.rss.xml" type="application/atom+xml" rel="alternate" title="BusinessPi - Full Atom Feed" />
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+     (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+     m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+     })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-67310740-1', 'auto');
+    ga('send', 'pageview');
+</script>
+    </head>
+    <body>
+        <div id="content-sans-footer">
+        <div class="navbar navbar-static-top">
+            <div class="navbar-inner">
+                <div class="container-fluid">
+                    <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </a>
+                    <a class="brand" href="./"><span class=site-name>BusinessPi</span></a>
+                    <div class="nav-collapse collapse">
+                        <ul class="nav pull-right top-menu">
+                            <li ><a href=".">Home</a></li>
+                            <li ><a href="./pages/downloads.html">Downloads</a></li>
+                            <li ><a href="./pages/feedback.html">Feedback</a></li>
+                            <li ><a href="./categories.html">Categories</a></li>
+                            <li ><a href="./tags.html">Tags</a></li>
+                            <li ><a href="./archives.html">Archives</a></li>
+                            <li><form class="navbar-search" action="./search.html" onsubmit="return validateForm(this.elements['q'].value);"> <input type="text" class="search-query" placeholder="Search" name="q" id="tipue_search_input"></form></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid">
+            <div class="row-fluid">
+                <div class="span1"></div>
+                <div class="span10">
+<article>
+<div class="row-fluid">
+    <header class="page-header span10 offset2">
+    <h1><a href="./hardware-dokimon.html"> Hardware δοκιμών  </a></h1>
+    </header>
+</div>
+
+<div class="row-fluid">
+    <div class="span2 table-of-content">
+        <nav>
+        <h4>Contents</h4>
+        <div class="toc">
+<ul>
+<li><a href="#banana-pi-m1">Banana Pi M1</a><ul>
+<li><a href="#banana-pi-m1_1">Συνοπτική περιγραφή του Banana Pi M1</a></li>
+<li><a href="#_1">Τεχνικές προδιαγραφές</a><ul>
+<li><a href="#_2">Παρελκόμενα</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+        </nav>
+    </div>
+    <div class="span8 article-content">
+
+            
+            <html><body>
+<p><img alt="BPI-M1" src="./images/BPI-M1.jpg" style="width: 300px; height: auto;"/></p>
+<h1 id="banana-pi-m1">Banana Pi M1</h1>
+<p>Στο προϊγούμενο άρθρο κάναμε μια εισαγωγή στο τι είναι το BusinessPi το οποίο μπορείτε να διαβάσετε στην ανάρτηση : </p>
+<ul>
+<li><a href="./ti-einai-to-businesspi.html">Τι είναι το BusinessPi</a></li>
+</ul>
+<p>Σήμερα θα κάνουμε μια παρουσίαση του Hardware δοκιμών που χρησιμοποιήθηκαν για την υλοποίηση του BusinessPi. Για τις ανάγκες του έργου έγινε εκτεταμένη έρευνα αγοράς για να επιλέξουμε τον ιδανικό συνδυασμό hardware και software ώστε να πληρούν τις εξής προϋποθέσεις : </p>
+<ul>
+<li>Ικανοποιητικές επιδόσεις για συνθήκες μιας μικρής επιχείρησης (έως 3-5 χρήστες)</li>
+<li>Συνδεσιμότητα και επεκτασιμότητα του hardware</li>
+<li>Βέλτιστο λόγο αξίας προς τιμή</li>
+</ul>
+<p>Αφού αποκλείσαμε κάποια μοντέλα (λόγοι κόστους/διαθεσιμότητας/επιδόσεων) επιλέξαμε και συγκρίναμε τα board που εμφανίζονται στον παρακάτω πίνακα. (Σημείωση η τιμή κόστους είναι ενδεικτική) </p>
+<p><img alt="comparison-piboards" src="./images/comparison-piboards.jpg" style="width: 807px; height: auto;"/></p>
+<p>Έτσι καταλήξαμε ότι η πρώτη έκδοση του έργου BusinessPi να γίνει διαθέσιμη για το <strong>Banana Pi M1</strong>. </p>
+<p>Παρόλα αυτά η εγκατάσταση των λογισμικών που διαθέτει το BusinessPi μπορεί να γίνει αυτόματα με χρήση του ειδικού λογισμικού που αναπτύξαμε, ανεξάρτητα από το Board ή το λειτουργικό Linux που διαθέτει το Board σας. Η παρουσίαση του λογισμικού θα γίνει τις επόμενες μέρες.</p>
+<h2 id="banana-pi-m1_1">Συνοπτική περιγραφή του Banana Pi M1</h2>
+<p>Το Banana Pi M1 είναι ένας <a href="https://en.wikipedia.org/wiki/Single-board_computer">single-board υπολογιστής</a> που κατασκευάζεται στην Κίνα. Χρησιμοποιεί την Allwinner Α20 SoC, διαθέτει διπύρηνο επεξεργαστή, 1GB RAM και η σύνδεση με το δίκτυο γίνεται διαμέσου της ενσωματωμένης ethernet.</p>
+<p>Το βασικό και επίσημο λειτουργικό σύστημα του BananaPi είναι το <strong>Bananian</strong> το οποίο είναι μια βελτιστοποιημένη έκδοση του λειτουργικού συστήματος Debian GNU/Linux για την πλατφόρμα του Banana Pi.</p>
+<p>Παρόλα αυτά όμως ο χρήστης μπορεί αν εγκαταστήσει και άλλες διανομές Linux. Ως λειτουργικά συστήματα υποστηρίζει : </p>
+<ul>
+<li>Android</li>
+<li>Ubuntu</li>
+<li>Debian</li>
+<li>OpenSUSE</li>
+<li>Fedora</li>
+</ul>
+<p>Μια εκτενείς λίστα διαθέσιμων λειτουργικών συστημάτων συμβατών με το Banana Pi M1 μπορείτε να δείτε εδώ <a href="http://www.banana-pi.org/download.html">http://www.banana-pi.org/download.html</a></p>
+<h2 id="_1">Τεχνικές προδιαγραφές</h2>
+<p>Οι τεχνικές προδιαγραφές του Banana Pi M1 έχουν ως εξής:</p>
+<p><img alt="BPI-M1-Specs" src="./images/BPI-M1-Specs.png" style="width: 819px; height: auto;"/></p>
+<p>Οι θέσεις των προδιαγραφών που αναφέρονται στον παραπάνω πίνακα μπορούν να εντοπιστούν στο BananaPi στην παρακάτω εικόνα :</p>
+<p><img alt="m1int-front-back" src="./images/m1int-front-back.jpg" style="width: 587px; height: auto;"/></p>
+<h4 id="_2">Παρελκόμενα</h4>
+<p>Επειδή τα board στην αγορά έρχονται ως έχουν (χωρίς δηλαδή περιφερικά), για τις ανάγκες του έργου χρησιμοποιήσαμε επίσης:</p>
+<ul>
+<li>μια SD Card Class 10 (για τις ανάγκες του OS/Software Stack)</li>
+<li>καλώδιο MicroUSB (για παροχή ρεύματος)</li>
+<li>καλώδιο δικτύου (για σύνδεση στο υφιστάμενο δίκτυο/internet)</li>
+</ul>
+<p>τα οποία φαίνονται στην παρακάτω εικόνα όπως είναι συνδεδεμένα και μπορείτε να διαβάσετε στην ανάρτηση : <a href="./epi-to-ergon.html">επί το έργον</a></p>
+<p><img alt="bananapi-businesspi-development" src="./images/bananapi-businesspi-development.jpg" style="width: 500px; height: auto;"/></p></body></html>
+            <section>
+    <p id="post-share-links">
+    Share on:
+    <a href="http://twitter.com/home?status=Hardware%20%CE%B4%CE%BF%CE%BA%CE%B9%CE%BC%CF%8E%CE%BD%20http%3A//businesspi.github.io/hardware-dokimon.html" target="_blank" title="Share on Twitter">Twitter</a>
+    ❄
+    <a href="http://www.facebook.com/sharer/sharer.php?s=100&amp;p%5Burl%5D=http%3A//businesspi.github.io/hardware-dokimon.html" target="_blank" title="Share on Facebook">Facebook</a>
+    ❄
+    <a href="https://plus.google.com/share?url=http%3A//businesspi.github.io/hardware-dokimon.html" target="_blank" title="Share on Google Plus">Google+</a>
+    ❄
+    <a href="mailto:?subject=Hardware%20%CE%B4%CE%BF%CE%BA%CE%B9%CE%BC%CF%8E%CE%BD&amp;body=http%3A//businesspi.github.io/hardware-dokimon.html" target="_blank" title="Share via Email">Email</a>
+    </p>
+</section>
+
+            
+            <hr/>
+<section>
+    <h2>Related Posts</h2>
+<ul class="related-posts-list">
+<li><a href="./ti-einai-to-businesspi.html" title="Τι είναι το BusinessPi">Τι είναι το BusinessPi</a></li>
+<li><a href="./leitourgiko-upiresies-logismiko.html" title="Λειτουργικό Σύστημα, Υπηρεσίες παρασκηνίου και Λογισμικό">Λειτουργικό Σύστημα, Υπηρεσίες παρασκηνίου και Λογισμικό</a></li>
+<li><a href="./sindesi-egkatastasi-businesspi.html" title="Σύνδεση BananaPi και εγκατάσταση του BusinessPi">Σύνδεση BananaPi και εγκατάσταση του BusinessPi</a></li>
+<li><a href="./dimiourgia-server-pi-board.html" title="Δημιουργία εταιρικού διακομιστή σε Single Board Computer (Pi board)">Δημιουργία εταιρικού διακομιστή σε Single Board Computer (Pi board)</a></li>
+</ul>
+<hr />
+</section>
+        </div>
+        <section>
+        <div class="span2" style="float:right;font-size:0.9em;">
+            <h4>Published</h4>
+            <time pubdate="pubdate" datetime="2015-09-09T17:14:00+03:00">Sep 9, 2015</time>
+
+<h4>Last Updated</h4>
+<time datetime="2015-09-09T17:25:00+03:00">Sep 9, 2015</time>
+
+            <h4>Category</h4>
+            <a class="category-link" href="./categories.html#documentation-ref">Documentation</a>
+            <h4>Tags</h4>
+            <ul class="list-of-tags tags-in-article">
+                <li><a href="./tags.html#bananapi-m1-ref">bananapi-m1
+                    <span>1</span>
+</a></li>
+                <li><a href="./tags.html#hardware-ref">hardware
+                    <span>1</span>
+</a></li>
+                <li><a href="./tags.html#single-board-computing-ref">single-board-computing
+                    <span>5</span>
+</a></li>
+            </ul>
+<h4>Contact</h4>
+    <a href="https://plus.google.com/+Salihemin" title="My Google-Plus Profile" class="sidebar-social-links" target="_blank">
+    <i class="fa fa-google-plus sidebar-social-links"></i></a>
+    <a href="https://twitter.com/cerebrux" title="My Twitter Profile" class="sidebar-social-links" target="_blank">
+    <i class="fa fa-twitter sidebar-social-links"></i></a>
+    <a href="https://github.com/cerebrux" title="My Github Profile" class="sidebar-social-links" target="_blank">
+    <i class="fa fa-github sidebar-social-links"></i></a>
+    <a href="https://www.linkedin.com/in/salihemin" title="My linkedin Profile" class="sidebar-social-links" target="_blank">
+    <i class="fa fa-linkedin sidebar-social-links"></i></a>
+        </div>
+        </section>
+</div>
+</article>
+                </div>
+                <div class="span1"></div>
+            </div>
+        </div>
+        <div id="push"></div>
+    </div>
+<footer>
+<div id="footer">
+    <ul class="footer-content">
+        <li class="elegant-license"><a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Άδεια Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a><br /> Το έργο με τίτλο <span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text" property="dct:title" rel="dct:type">BusinessPi</span> από τον δημιουργό <a xmlns:cc="http://creativecommons.org/ns#" href="https://github.com/ellak-monades-aristeias/BusinessPi/wiki" property="cc:attributionName" rel="cc:attributionURL">Salih Emin</a> διατίθεται με την άδεια <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Αναφορά Δημιουργού - Μη Εμπορική Χρήση - Παρόμοια Διανομή 4.0 Διεθνές </a>.</li>
+        <li class="elegant-power">Powered by <a href="http://getpelican.com/" title="Pelican Home Page">Pelican</a>. Theme: <a href="http://oncrashreboot.com/pelican-elegant" title="Theme Elegant Home Page">Elegant</a> by <a href="http://oncrashreboot.com" title="Talha Mansoor Home Page">Talha Mansoor</a></li>
+    </ul>
+</div>
+</footer>            <script src="http://code.jquery.com/jquery.min.js"></script>
+        <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+        <script>
+            function validateForm(query)
+            {
+                return (query.length > 0);
+            }
+        </script>
+
+    
+    </body>
+    <!-- Theme: Elegant built for Pelican
+    License : http://oncrashreboot.com/pelican-elegant -->
+</html>
