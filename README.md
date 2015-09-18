@@ -1,3 +1,5 @@
+![bananapi-banner](https://raw.githubusercontent.com/ellak-monades-aristeias/BusinessPi/master/Web-Site/images/bananapi-banner.jpg)
+
 # BusinessPi
 
 - Για νέα σχετικά με την εξέλιξη του έργου επισκεφθείτε την ιστοσελίδα  [http://businesspi.github.io](http://businesspi.github.io)
