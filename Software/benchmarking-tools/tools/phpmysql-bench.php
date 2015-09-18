@@ -3,6 +3,7 @@
 
 ab -n 1000 -c 5 http://domain-tou-server/phpmysql-bench.php
 
+O κώδικας διατίθεται υπο την άδεια GPL v2.0 http://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html
 */
 
 <html>
