@@ -2,6 +2,7 @@
 
 # BusinessPi
 
+- Βίντεο απο την παρουσίαση του έργου : [http://businesspi.github.io/video-parousiasi-businesspi-greeklug.html](http://businesspi.github.io/video-parousiasi-businesspi-greeklug.html)
 - Για νέα σχετικά με την εξέλιξη του έργου επισκεφθείτε την ιστοσελίδα  [http://businesspi.github.io](http://businesspi.github.io)
 - Για να διαβάσετε οδηγούς χρήσης ή την τεκμηρίωση του έργου επισκεφθείτε το [Wiki](https://github.com/ellak-monades-aristeias/BusinessPi/wiki) 
 - Για συζήτηση ή αναφορά προβλήματος επισκεφθείτε την σελίδα [Issues](https://github.com/ellak-monades-aristeias/BusinessPi/issues)
