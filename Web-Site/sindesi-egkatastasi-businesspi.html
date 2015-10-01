@@ -144,7 +144,7 @@
 <ol>
 <li>Κάντε εγγραφή του <strong>image</strong> του λειτουργικού στην SD κάρτα με το λογισμικό <strong>dd</strong> :</li>
 </ol>
-<div class="highlight"><pre>sudo dd if=bananian-1504.img of=/dev/&lt;όνομα συσκευής&gt; bs=1M &amp;&amp; sync
+<div class="highlight"><pre>sudo dd <span class="k">if</span><span class="o">=</span>bananian-1504.img <span class="nv">of</span><span class="o">=</span>/dev/&lt;όνομα συσκευής&gt; <span class="nv">bs</span><span class="o">=</span>1M <span class="o">&amp;&amp;</span> sync
 </pre></div>
 <h3 id="windows">Windows</h3>
 <p>Οι χρήστες Windows μπορούν να χρησιμοποιήσουν το Win32 Disk Imager. Για λήψη του λογισμικού επισκεφθείτε την ιστοσελίδα : <a href="http://sourceforge.net/projects/win32diskimager/">http://sourceforge.net/projects/win32diskimager/</a></p>
@@ -157,7 +157,7 @@
 <ol>
 <li>Κάντε εγγραφή του image του λειτουργικού στην SD κάρτα με το λογισμικό dd :</li>
 </ol>
-<div class="highlight"><pre>sudo dd if=bananian-1504.img of=/dev/disk9 bs=1M &amp;&amp; diskutil eject disk9
+<div class="highlight"><pre>sudo dd <span class="k">if</span><span class="o">=</span>bananian-1504.img <span class="nv">of</span><span class="o">=</span>/dev/disk9 <span class="nv">bs</span><span class="o">=</span>1M <span class="o">&amp;&amp;</span> diskutil eject disk9
 </pre></div>
 <p><a href="https://www.bananian.org/download">Πηγή Οδηγού</a></p>
 <h1 id="_2">Σύνδεση και πρώτη εκκίνηση</h1>
@@ -175,14 +175,14 @@
 <div class="highlight"><pre>sudo arp-scan -l -v
 </pre></div>
 <p>το αποτέλεσμα της εντολής θα επιστρέψει κάτι που μοιάζει με το παρακάτω</p>
-<div class="highlight"><pre><span class="n">Interface</span><span class="o">:</span> <span class="n">wlan0</span><span class="o">,</span> <span class="n">datalink</span> <span class="n">type</span><span class="o">:</span> <span class="n">EN10MB</span> <span class="o">(</span><span class="n">Ethernet</span><span class="o">)</span>
-<span class="n">Using</span> <span class="mf">10.3</span><span class="o">.</span><span class="mf">2.0</span><span class="o">:</span><span class="mf">255.255</span><span class="o">.</span><span class="mf">255.0</span> <span class="k">for</span> <span class="n">localnet</span>
-<span class="n">Starting</span> <span class="n">arp</span><span class="o">-</span><span class="n">scan</span> <span class="mf">1.8</span><span class="o">.</span><span class="mi">1</span> <span class="k">with</span> <span class="mi">256</span> <span class="n">hosts</span> <span class="o">(</span><span class="n">http</span><span class="o">://</span><span class="n">www</span><span class="o">.</span><span class="na">nta</span><span class="o">-</span><span class="n">monitor</span><span class="o">.</span><span class="na">com</span><span class="sr">/tools/arp-scan/</span><span class="o">)</span>
-<span class="mf">10.3</span><span class="o">.</span><span class="mf">2.8</span>    <span class="n">ec</span><span class="o">:</span><span class="mi">1</span><span class="n">a</span><span class="o">:</span><span class="mi">59</span><span class="o">:</span><span class="mi">87</span><span class="o">:</span><span class="mi">60</span><span class="o">:</span><span class="n">b8</span>   <span class="o">(</span><span class="n">Unknown</span><span class="o">)</span>
-<span class="mf">10.3</span><span class="o">.</span><span class="mf">2.40</span>   <span class="mi">10</span><span class="o">:</span><span class="mi">60</span><span class="o">:</span><span class="mi">4</span><span class="n">b</span><span class="o">:</span><span class="mi">4</span><span class="n">e</span><span class="o">:</span><span class="mi">09</span><span class="o">:</span><span class="mi">73</span>   <span class="o">(</span><span class="n">Unknown</span><span class="o">)</span>
-<span class="o">---</span> <span class="n">Pass</span> <span class="mi">1</span> <span class="n">complete</span>
-<span class="mf">10.3</span><span class="o">.</span><span class="mf">2.88</span>   <span class="mi">02</span><span class="o">:</span><span class="mi">4</span><span class="n">f</span><span class="o">:</span><span class="mi">0</span><span class="n">b</span><span class="o">:</span><span class="mi">42</span><span class="o">:</span><span class="mi">97</span><span class="o">:</span><span class="mi">35</span>   <span class="o">(</span><span class="n">Unknown</span><span class="o">)</span>
-<span class="o">---</span> <span class="n">Pass</span> <span class="mi">2</span> <span class="n">complete</span>
+<div class="highlight"><pre>Interface: wlan0, datalink <span class="nb">type</span>: EN10MB <span class="o">(</span>Ethernet<span class="o">)</span>
+Using 10.3.2.0:255.255.255.0 <span class="k">for</span> localnet
+Starting arp-scan 1.8.1 with <span class="m">256</span> hosts <span class="o">(</span>http://www.nta-monitor.com/tools/arp-scan/<span class="o">)</span>
+10.3.2.8    ec:1a:59:87:60:b8   <span class="o">(</span>Unknown<span class="o">)</span>
+10.3.2.40   10:60:4b:4e:09:73   <span class="o">(</span>Unknown<span class="o">)</span>
+--- Pass <span class="m">1</span> <span class="nb">complete</span>
+10.3.2.88   02:4f:0b:42:97:35   <span class="o">(</span>Unknown<span class="o">)</span>
+--- Pass <span class="m">2</span> <span class="nb">complete</span>
 </pre></div>
 <h3 id="ssh-pi-board">Σύνδεση με SSH στο Pi Board</h3>
 <p>Για την σύνδεση με το Pi Board θα χρειαστείτε τερματικό περιβάλλον ικανό να εκτελεί SSH συνδέσεις. (Επισκεφθείτε την επίσημη ιστοσελίδα η την κοινότητα που αντιστοιχεί στο λειτουργικό του υπολογιστή σας για περισσότερες πληροφορίες)</p>
@@ -191,60 +191,60 @@
 <p>Το <em>όνομα χρήστη</em> είναι <strong>root</strong> και το <em>password</em> είναι <strong>businesspi</strong> (το οποίο θα πρέπει να το αλλάξετε για λόγους ασφαλείας)</p>
 </blockquote>
 <p>Αν απορριφθεί η σύνδεση συνεχίζετε με την επόμενη IP. Παράδειγμα: </p>
-<div class="highlight"><pre><span class="n">salih</span><span class="p">@</span><span class="nl">debian</span><span class="p">:</span><span class="o">~</span><span class="err">$</span> <span class="n">ssh</span> <span class="n">root</span><span class="mf">@10.3.2.40</span>
-<span class="nl">ssh</span><span class="p">:</span> <span class="n">connect</span> <span class="n">to</span> <span class="n">host</span> <span class="mf">10.3.2.40</span> <span class="n">port</span> <span class="mi">22</span><span class="o">:</span> <span class="n">Connection</span> <span class="n">refused</span>
+<div class="highlight"><pre>salih@debian:~<span class="nv">$ </span>ssh root@10.3.2.40
+ssh: connect to host 10.3.2.40 port 22: Connection refused
 
-<span class="n">salih</span><span class="p">@</span><span class="nl">debian</span><span class="p">:</span><span class="o">~</span><span class="err">$</span> <span class="n">ssh</span> <span class="n">root</span><span class="mf">@10.3.2.88</span>
+salih@debian:~<span class="nv">$ </span>ssh root@10.3.2.88
 
-<span class="n">The</span> <span class="n">authenticity</span> <span class="n">of</span> <span class="n">host</span> <span class="err">'</span><span class="mf">10.3.2.88</span> <span class="p">(</span><span class="mf">10.3.2.88</span><span class="p">)</span><span class="err">'</span> <span class="n">can</span><span class="err">'</span><span class="n">t</span> <span class="n">be</span> <span class="n">established</span><span class="p">.</span>
-<span class="n">RSA</span> <span class="n">key</span> <span class="n">fingerprint</span> <span class="n">is</span> <span class="nl">SHA256</span><span class="p">:</span><span class="n">epMOnf1ENl7M6FaSd1Qkvsu9bvx6k2v20mSnYX8E</span><span class="p">.</span>
-<span class="n">Are</span> <span class="n">you</span> <span class="n">sure</span> <span class="n">you</span> <span class="n">want</span> <span class="n">to</span> <span class="k">continue</span> <span class="n">connecting</span> <span class="p">(</span><span class="n">yes</span><span class="o">/</span><span class="n">no</span><span class="p">)</span><span class="o">?</span> <span class="n">yes</span> <span class="p">(</span><span class="err">εδώ</span> <span class="err">πληκτρολογείτε</span> <span class="n">yes</span> <span class="err">και</span> <span class="err">πατάτε</span> <span class="n">enter</span><span class="p">)</span>
-<span class="nl">Warning</span><span class="p">:</span> <span class="n">Permanently</span> <span class="n">added</span> <span class="err">'</span><span class="mf">10.3.2.88</span><span class="err">'</span> <span class="p">(</span><span class="n">RSA</span><span class="p">)</span> <span class="n">to</span> <span class="n">the</span> <span class="n">list</span> <span class="n">of</span> <span class="n">known</span> <span class="n">hosts</span><span class="p">.</span>
+The authenticity of host <span class="s1">'10.3.2.88 (10.3.2.88)'</span> can<span class="s1">'t be established.</span>
+<span class="s1">RSA key fingerprint is SHA256:epMOnf1ENl7M6FaSd1Qkvsu9bvx6k2v20mSnYX8E.</span>
+<span class="s1">Are you sure you want to continue connecting (yes/no)? yes (εδώ πληκτρολογείτε yes και πατάτε enter)</span>
+<span class="s1">Warning: Permanently added '</span>10.3.2.88<span class="s1">' (RSA) to the list of known hosts.</span>
 
-<span class="n">root</span><span class="mf">@10.3.2.88</span><span class="err">'</span><span class="n">s</span> <span class="nl">password</span><span class="p">:</span> 
-<span class="n">Linux</span> <span class="n">bananapi</span> <span class="mf">3.4.104</span><span class="o">-</span><span class="n">bananian</span> <span class="err">#</span><span class="mi">1</span> <span class="n">SMP</span> <span class="n">PREEMPT</span> <span class="n">Mon</span> <span class="n">Apr</span> <span class="mi">6</span> <span class="mi">18</span><span class="o">:</span><span class="mi">25</span><span class="o">:</span><span class="mi">40</span> <span class="n">UTC</span> <span class="mi">2015</span> <span class="n">armv7l</span>
+<span class="s1">root@10.3.2.88'</span>s password: 
+Linux bananapi 3.4.104-bananian <span class="c">#1 SMP PREEMPT Mon Apr 6 18:25:40 UTC 2015 armv7l</span>
 
-<span class="o">------------------------------------------------------------------------</span> 
-<span class="n">Welcome</span> <span class="n">to</span> <span class="n">Bananian</span> <span class="n">Linux</span><span class="o">!</span>
-<span class="n">For</span> <span class="n">news</span> <span class="n">and</span> <span class="n">updates</span> <span class="nl">check</span><span class="p">:</span> <span class="nl">https</span><span class="p">:</span><span class="c1">//www.bananian.org</span>
-<span class="n">Any</span> <span class="n">questions</span><span class="o">?</span> <span class="n">Read</span> <span class="n">the</span> <span class="n">FAQ</span> <span class="nl">first</span><span class="p">:</span> <span class="nl">https</span><span class="p">:</span><span class="c1">//www.bananian.org/faq</span>
+------------------------------------------------------------------------ 
+Welcome to Bananian Linux!
+For news and updates check: https://www.bananian.org
+Any questions? Read the FAQ first: https://www.bananian.org/faq
 
-<span class="n">Run</span> <span class="err">'</span><span class="n">bananian</span><span class="o">-</span><span class="n">config</span><span class="err">'</span> <span class="n">to</span> <span class="n">set</span> <span class="n">up</span> <span class="n">Bananian</span> <span class="n">Linux</span>
-<span class="n">Run</span> <span class="err">'</span><span class="n">bananian</span><span class="o">-</span><span class="n">update</span><span class="err">'</span> <span class="n">to</span> <span class="n">check</span> <span class="k">for</span> <span class="n">distribution</span> <span class="n">updates</span>
-<span class="o">------------------------------------------------------------------------</span>
-<span class="n">root</span><span class="p">@</span><span class="n">vtiger</span> <span class="o">~</span> <span class="err">#</span>
+Run <span class="s1">'bananian-config'</span> to <span class="nb">set </span>up Bananian Linux
+Run <span class="s1">'bananian-update'</span> to check <span class="k">for</span> distribution updates
+------------------------------------------------------------------------
+root@vtiger ~ <span class="c">#</span>
 </pre></div>
 <p>Εφόσον δείτε την επιστροφή <code>root@bananapi ~ #</code> είστε πλέον συνδεδεμένοι στο λειτουργικό σύστημα του Pi board σας, όπου μπορείτε να εκτελείτε όλες τις διαθέσιμες εργασίες που παρέχει ένα <a href="https://www.debian.org/index.el.html">Debian GNU/Linux</a> λειτουργικό σύστημα.</p>
 <h4 id="ssh">Ρυθμίσεις SSH</h4>
 <p>Eίναι συμαντικό να αλλάξετε το port στο οποίο συνδέεστε μέσω ssh, να δημιουργήσετε εκ νέου κλειδιά κρυπτογραφημένης σύνδεσης και να εγκαταστίσετε κάποιον διαχειριστή firewall:</p>
 <p>Για την ρύθμιση του SSH port:</p>
-<div class="highlight"><pre>root@vtiger ~ # nano /etc/ssh/sshd_config
+<div class="highlight"><pre>root@vtiger ~ <span class="c"># nano /etc/ssh/sshd_config</span>
 </pre></div>
 <p>και αλάξτε στην γραμμή <code>Port 22</code> την 22 σε διαφορετική. Έπειτα κάντε επανεκκίνηση την υπηρεσία SSH:</p>
-<div class="highlight"><pre>root@vtiger ~ # invoke-rc.d ssh restart
+<div class="highlight"><pre>root@vtiger ~ <span class="c"># invoke-rc.d ssh restart</span>
 </pre></div>
 <p>Έτσι την επόμενη φορά που θα συνδεθείτε χρησιμοποιήστε το νέο port με την παράμετρο <code>-p &lt;νέα τιμή&gt;</code> </p>
 <p>Για την δημιουργία κλειδιών επαναρυθμίστε:</p>
-<div class="highlight"><pre>root@vtiger ~ # rm -v /etc/ssh/ssh_host_*
-root@vtiger ~ # dpkg-reconfigure openssh-server
+<div class="highlight"><pre>root@vtiger ~ <span class="c"># rm -v /etc/ssh/ssh_host_*</span>
+root@vtiger ~ <span class="c"># dpkg-reconfigure openssh-server</span>
 
-Creating SSH2 RSA key; this may take some time ...
-[ ok ] Restarting OpenBSD Secure Shell server: sshd.
+Creating SSH2 RSA key<span class="p">;</span> this may take some <span class="nb">time</span> ...
+<span class="o">[</span> ok <span class="o">]</span> Restarting OpenBSD Secure Shell server: sshd.
 </pre></div>
 <p>Αφού δημιουργηθούν νέα κλειδιά, αποσυσνδεθείτε απο το board και αφαιρέστε απο τον υπολογιστή σας τα παλιά κλειδιά διότι σε διαφορετική περίπτωση όταν θα προσπαθήσετε να συνδεθείτε θα δείτε το παρακάτω μήνυμα με το οποίο αποτυγχάνεται η πιστοποίηση κλειδιών κρυπτογράφησης.:</p>
 <div class="highlight"><pre>@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 @    WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!     @
 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 IT IS POSSIBLE THAT SOMEONE IS DOING SOMETHING NASTY!
-Someone could be eavesdropping on you right now (man-in-the-middle attack)!
+Someone could be eavesdropping on you right now <span class="o">(</span>man-in-the-middle attack<span class="o">)</span>!
 It is also possible that a host key has just been changed.
-The fingerprint for the RSA key sent by the remote host is
+The fingerprint <span class="k">for</span> the RSA key sent by the remote host is
 SHA256:jhagsdsjdasd47163817897098029ysdsd/g.
 Please contact your system administrator.
 Add correct host key in /home/salih/.ssh/known_hosts to get rid of this message.
 Offending RSA key in /home/salih/.ssh/known_hosts:9
-  remove with: ssh-keygen -f "/home/salih/.ssh/known_hosts" -R [10.3.2.88]
-RSA host key for [10.3.2.88] has changed and you have requested strict checking.
+  remove with: ssh-keygen -f <span class="s2">"/home/salih/.ssh/known_hosts"</span> -R <span class="o">[</span>10.3.2.88<span class="o">]</span>
+RSA host key <span class="k">for</span> <span class="o">[</span>10.3.2.88<span class="o">]</span> has changed and you have requested strict checking.
 Host key verification failed.
 </pre></div>
 <p>Η αφαίρεση μπορεί να γίνει με δυο τρόπους:</p>
@@ -298,37 +298,37 @@ Host key verification failed.
 <h3 id="ip-businesspi">Ρύθμιση Στατικής IP για το BusinessPi</h3>
 <p>Πριν όμως κάνουμε επανεκκίνηση το σύστημα θα πρέπει να ρυθμίσουμε μια στατική IP ώστε να μην χρειάζεται κάθε φορά να ψάχνουμε την IP του board μας επειδή ο DHCP λαμβάνει αυτόματα την IP απο το rooter μας.  </p>
 <p>Θα χρειαστεί να επεξεργαστούμε το αρχείο <code>/etc/network/interfaces</code></p>
-<div class="highlight"><pre>root@vtiger ~ # nano /etc/network/interfaces
+<div class="highlight"><pre>root@vtiger ~ <span class="c"># nano /etc/network/interfaces</span>
 
-# interfaces(5) file used by ifup(8) and ifdown(8)
+<span class="c"># interfaces(5) file used by ifup(8) and ifdown(8)</span>
 auto lo
 iface lo inet loopback
 
 auto eth0
 
-# dhcp configuration 
-# iface eth0 inet dhcp (&lt;--- ΕΔΩ βάζουμε # στην αρχή)
+<span class="c"># dhcp configuration </span>
+<span class="c"># iface eth0 inet dhcp (&lt;--- ΕΔΩ βάζουμε # στην αρχή)</span>
 
-# static ip configuration ( Συμπληρώνουμε όπως παρακάτω)
+<span class="c"># static ip configuration ( Συμπληρώνουμε όπως παρακάτω)</span>
 iface eth0 inet static
         address 192.168.10.200 
         netmask 255.255.255.0
         network 192.168.10.0
         broadcast 192.168.10.255
         gateway 192.168.10.1
-        #οι dns-* επιλογές ρυθμίζονται απο το πακέτο resolvconf, εφόσον είναι εκγατεστημένα
+        <span class="c">#οι dns-* επιλογές ρυθμίζονται απο το πακέτο resolvconf, εφόσον είναι εκγατεστημένα</span>
         dns-nameservers 192.168.10.1
         dns-search vtiger.businesspi.local
 </pre></div>
 <p>Για τις τιμές που θα βάλετε στα αντίστοιχα πεδία θα πρέπει να δείτε ποιες είναι οι σωστές από τις ρυθμίσεις του router σας ή απο τον υπολογιστή σας (πληροφορίες δικτύου). Θα πρέπει να προσέξετε να μην βάλετε κάποια IP στην τιμή <code>address</code> που ήδη έχει ανατεθεί σε άλλη συσκευή στο δίκτυό σας για να μην προκληθεί διένεξη των διευθύνσεων. </p>
 <p>Αποθηκεύστε το αρχείο και κλείστε το. Μια τελευταία ρύθμιση είναι να προσθέσετε την στατική IP και στο <code>/etc/hosts</code> αρχείο.</p>
-<div class="highlight"><pre>root@vtiger ~ # nano /etc/hosts
+<div class="highlight"><pre>root@vtiger ~ <span class="c"># nano /etc/hosts</span>
 
 127.0.0.1   localhost
 127.0.1.1   vtiger.businesspi.local      vtiger
 192.168.10.200  vtiger.businesspi.local      vtiger
 
-# The following lines are desirable for IPv6 capable hosts
+<span class="c"># The following lines are desirable for IPv6 capable hosts</span>
 ::1     localhost ip6-localhost ip6-loopback
 ff02::1 ip6-allnodes
 ff02::2 ip6-allrouters

@@ -196,7 +196,7 @@
 <div class="highlight"><pre>unzip master.zip
 </pre></div>
 <p>Εισέλθετε στον φάκελο vtiger-installer-master</p>
-<div class="highlight"><pre>cd vtiger-installer-master
+<div class="highlight"><pre><span class="nb">cd </span>vtiger-installer-master
 </pre></div>
 <p>Εκτελέστε τον αυτόματο εγκαταστάτη</p>
 <div class="highlight"><pre>sudo ./businesspi-vtiger-installer.sh
@@ -217,11 +217,11 @@
 <p>Αφού συνδεθείτε από τον browser του υπολογιστή σας στο <a href="http://vtiger.businesspi.local">http://vtiger.businesspi.local</a> ακολουθήστε τις οδηγίες Ρύθμισης του vtiger που είδαμε στο προϊγούμενο άρθρο.</p>
 <h3 id="_8">Χειροκίνητη εγκατάσταση</h3>
 <p>Αφού συνδεθείτε στο board σας ενημερώστε το σύστημά σας:</p>
-<div class="highlight"><pre>sudo apt-get update &amp;&amp; sudo apt-get -y upgrade
+<div class="highlight"><pre>sudo apt-get update <span class="o">&amp;&amp;</span> sudo apt-get -y upgrade
 </pre></div>
 <p>Αλλάξτε το Hostname του συστήματος σε <strong>vtiger</strong> </p>
 <div class="highlight"><pre>sudo cp /etc/hostname /etc/hostname.origin
-sudo echo 'vtiger' &gt; /etc/hostname
+sudo <span class="nb">echo</span> <span class="s1">'vtiger'</span> &gt; /etc/hostname
 </pre></div>
 <p>και το domain σε <strong>vtiger.businesspi.local</strong> ώστε το board σας να διαθέτει <a href="https://en.wikipedia.org/wiki/Fully_qualified_domain_name">FQDN</a></p>
 <div class="highlight"><pre>sudo nano /etc/hosts
@@ -253,7 +253,7 @@ ff02::2     ip6-allrouters
 <div class="highlight"><pre>tar -xvzf vtigercrm6.3.0.tar.gz
 rm /var/www/index.html
 mv vtigercrm /var/www/vtigercrm
-chmod -R 775 /var/www/vtigercrm
+chmod -R <span class="m">775</span> /var/www/vtigercrm
 chown -R www-data:www-data /var/www/vtigercrm
 </pre></div>
 <p>Ρυθμίστε την PHP με βάση τις προδιαγραφές που απαιτούνται απο το Vtiger CRM <a href="https://wiki.vtiger.com/index.php/Installation_with_LAMP">βλέπε Vtiger PHP Configuration</a></p>
@@ -264,21 +264,21 @@ sudo nano /etc/php5/apache2/php.ini
 <div class="highlight"><pre>sudo nano /etc/apache2/sites-available/vtigercrmapache
 
 
-<span class="nt">&lt;VirtualHost</span> <span class="err">*:80</span><span class="nt">&gt;</span>
+&lt;VirtualHost *:80&gt;
     ServerName vtiger.businesspi.local
     DocumentRoot /var/www/vtigercrm
-    <span class="nt">&lt;Directory</span> <span class="err">/var/www/vtigercrm</span><span class="nt">&gt;</span>
+    &lt;Directory /var/www/vtigercrm&gt;
                 Options FollowSymLinks
                 AllowOverride None
-    <span class="nt">&lt;/Directory&gt;</span>
-    # Possible vaues include: debug, info, notice, warn, error, crit,
-    # alert, emerg.
+    &lt;/Directory&gt;
+    <span class="c"># Possible vaues include: debug, info, notice, warn, error, crit,</span>
+    <span class="c"># alert, emerg.</span>
     LogLevel warn
     ErrorLog /var/log/apache2/vtigercrm-error.log
     CustomLog /var/log/apache2/vtigercrm-access.log combined
     ServerSignature Off
 
-<span class="nt">&lt;/VirtualHost&gt;</span>
+&lt;/VirtualHost&gt;
 </pre></div>
 <p>Αφού αποθηκεύσετε και κλείσετε το αρχείο, ενεργοποιείστε το νέο vhost και απενεργοποιήστε τον προεπιλεγμένο του apache</p>
 <div class="highlight"><pre>sudo a2ensite vtigercrmapache 
