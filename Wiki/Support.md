@@ -2,11 +2,9 @@
 
 # Επικοινωνία - Συζήτηση
 
-Για συζήτηση, αίτημα για συμμετοχή, η για να θέσετε ένα ερώτημα παρακαλώ επισκεφθείτε την σελίδα:
+Για συζήτηση, αίτημα για συμμετοχή, η για να θέσετε ένα ερώτημα παρακαλώ επισκεφθείτε το Forum:
 
-- [https://github.com/ellak-monades-aristeias/BusinessPi/issues](https://github.com/ellak-monades-aristeias/BusinessPi/issues)
-
-κάντε κλίκ στο **New Issue** και γράψτε το αίτημα η την ερώτησή σας.
+- [https://forum-businesspi.rhcloud.com](https://forum-businesspi.rhcloud.com/)
 
 # Αναφορά προβλήματος
 
