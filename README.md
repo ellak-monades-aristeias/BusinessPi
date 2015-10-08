@@ -25,13 +25,13 @@
 
 Περιλαμβάνει την στιγμιότυπο (image file) του λειτουργικού συστήματος που μπορεί να εγκαταστήσει οποιοσδήποτε σε ένα BananaPi. Σχετικά με την λήψη και εγκατάστασή του διαβάστε τις οδηγίες στο Wiki στο κεφάλαιο **System Setup**:
 
-- <https://github.com/ellak-monades-aristeias/BusinessPi/wiki/System-Setup>
+- https://github.com/ellak-monades-aristeias/BusinessPi/wiki/System-Setup
 
 ### Hardware
 
 Περιλαμβάνει εικόνες, τεχνικά φυλλάδια και αρχεία του υλικού που χρησιμοποιήθηκαν για την ανάπτυξη του BusinessPi-OS. Αναλυτικές πληροφορίες μπορείτε να διαβάσετε στο Wiki στο κεφάλαιο **Hardware**:
 
-- <https://github.com/ellak-monades-aristeias/BusinessPi/wiki/Hardware>
+- https://github.com/ellak-monades-aristeias/BusinessPi/wiki/Hardware
 
 ### Images
 
@@ -45,19 +45,21 @@
 
 Ο φάκελος περιλαμβάνει τον πηγαίο κώδικα του Vtiger, της μετάφρασης του Vtiger στα ελληνικά, εργαλεία που φτιάχτηκαν για την αξιολόγηση των επιδόσεών του μαζί με εικόνες από τα αποτελέσματά που καταγράφτηκαν, αλλά και το λογισμικό που αναπτύξαμε για την αυτόματη ρύθμιση και εγκατάστασή του Vtiger 6.3.0, που συμπεριλαμβάνεται στο λειτουργικό σύστημα του BusinessPi-OS. 
 Το λογισμικό αυτό μπορεί να χρησιμοποιηθεί και ανεξάρτητα από το λειτουργικό σύστημα του BananaPi σε περίπτωση που ο χρήστης επιθυμεί να κάνει εγκατάσταση μια διαφορετική (Debian based) διανομή στο BananaPi του ή ακόμα και σε άλλο Single Board Computer. 
-Αναλυτικές πληροφορίες μπορείτε να διαβάσετε στο Wiki στο κεφάλαιο **Hardware**:
+Αναλυτικές πληροφορίες μπορείτε να διαβάσετε στο Wiki στο κεφάλαιο **System Setup (Build)**:
+
+- https://github.com/ellak-monades-aristeias/BusinessPi/wiki/System-Setup-(Build)
 
 ### Web-Site
 
 Ο φάκελος περιλαμβάνει τον πηγαίο κώδικα της ιστοσελίδας του BusinessPi ο οποίος είναι επισκέψιμος στο:
 
-- <http://businesspi.github.io>
+- http://businesspi.github.io
 
 ### Wiki
 
 Ο φάκελος περιλαμβάνει τον πηγαίο κώδικα του wiki ο οποίος είναι επισκέψιμος στο : 
 
-- <https://github.com/ellak-monades-aristeias/BusinessPi/wiki>
+- https://github.com/ellak-monades-aristeias/BusinessPi/wiki
 
 
 > Το έργο έχει εγκριθεί για Ενίσχυση Έργων Ανοιχτού Λογισμικού από την [ΕΕΛ/ΛΑΚ](https://ellak.gr/)
