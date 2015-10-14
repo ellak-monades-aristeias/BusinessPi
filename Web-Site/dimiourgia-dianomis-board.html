@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <meta charset="utf-8"> 
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="author" content="Salih Emin" />
+        <meta name="copyright" content="Salih Emin" />
+
+        <meta name="description" content="Παρουσίαση τεχνικής για να φτιάξετε τροποποιημένη διανομή για το δικό σας Board
+" />
+        <meta property="og:type" content="article" />
+        <meta name="twitter:card" content="summary">
+
+<meta name="keywords" content="distribution, custom, single-board-computing, Documentation, " />
+
+<meta property="og:title" content="Τροποποίηση διανομής και δημιουργία νέας για Single Board Computer "/>
+<meta property="og:url" content="http://businesspi.github.io/dimiourgia-dianomis-board.html" />
+<meta property="og:description" content="Παρουσίαση τεχνικής για να φτιάξετε τροποποιημένη διανομή για το δικό σας Board" />
+<meta property="og:site_name" content="BusinessPi" />
+<meta property="og:article:author" content="Salih Emin" />
+<meta property="og:article:published_time" content="2015-10-07T22:14:00+03:00" />
+<meta property="" content="2015-10-08T11:50:00+03:00" />
+<meta name="twitter:title" content="Τροποποίηση διανομής και δημιουργία νέας για Single Board Computer ">
+<meta name="twitter:description" content="Παρουσίαση τεχνικής για να φτιάξετε τροποποιημένη διανομή για το δικό σας Board">
+
+        <title>Τροποποίηση διανομής και δημιουργία νέας για Single Board Computer  · BusinessPi
+</title>
+<!--	<link rel="stylesheet" type="text/css" href="http://businesspi.github.io/theme/css/bootstrap-combined.min.css" media="screen">-->
+<!--	<link rel="stylesheet" type="text/css" href="http://businesspi.github.io/theme/css/font-awesome.css" media="screen"> -->
+        <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet">
+        <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.1/css/font-awesome.css" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="http://businesspi.github.io/theme/css/pygments.css" media="screen">
+        <link rel="stylesheet" type="text/css" href="http://businesspi.github.io/theme/tipuesearch/tipuesearch.css" media="screen">
+        <link rel="stylesheet" type="text/css" href="http://businesspi.github.io/theme/css/elegant.css" media="screen">
+        <link rel="stylesheet" type="text/css" href="http://businesspi.github.io/theme/css/custom.css" media="screen">
+        <link href="http://businesspi.github.io/feeds/all.rss.xml" type="application/atom+xml" rel="alternate" title="BusinessPi - Full Atom Feed" />
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+     (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+     m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+     })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-67310740-1', 'auto');
+    ga('send', 'pageview');
+</script>
+    </head>
+    <body>
+        <div id="content-sans-footer">
+        <div class="navbar navbar-static-top">
+            <div class="navbar-inner">
+                <div class="container-fluid">
+                    <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </a>
+                    <a class="brand" href="http://businesspi.github.io/"><span class=site-name>BusinessPi</span></a>
+                    <div class="nav-collapse collapse">
+                        <ul class="nav pull-right top-menu">
+                            <li ><a href="http://businesspi.github.io">Home</a></li>
+                            <li ><a href="http://businesspi.github.io/pages/downloads.html">Downloads</a></li>
+                            <li ><a href="http://businesspi.github.io/pages/feedback.html">Feedback</a></li>
+                            <li ><a href="http://businesspi.github.io/categories.html">Categories</a></li>
+                            <li ><a href="http://businesspi.github.io/tags.html">Tags</a></li>
+                            <li ><a href="http://businesspi.github.io/archives.html">Archives</a></li>
+                            <li><form class="navbar-search" action="http://businesspi.github.io/search.html" onsubmit="return validateForm(this.elements['q'].value);"> <input type="text" class="search-query" placeholder="Search" name="q" id="tipue_search_input"></form></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid">
+            <div class="row-fluid">
+                <div class="span1"></div>
+                <div class="span10">
+<article>
+<div class="row-fluid">
+    <header class="page-header span10 offset2">
+    <h1><a href="http://businesspi.github.io/dimiourgia-dianomis-board.html"> Τροποποίηση διανομής και δημιουργία νέας για Single Board Computer  </a></h1>
+    </header>
+</div>
+
+<div class="row-fluid">
+    <div class="span2 table-of-content">
+        <nav>
+        <h4>Contents</h4>
+        <div class="toc">
+<ul>
+<li><a href="#_1">Εισαγωγή</a></li>
+<li><a href="#_2">Εργαλεία και Μεθοδολογία</a><ul>
+<li><a href="#_3">Προετοιμασία του υπολογιστή</a></li>
+<li><a href="#_4">Λήψη βάσης</a></li>
+<li><a href="#_5">Εύρεση κατατμήσεων</a></li>
+<li><a href="#_6">Προσάρτηση ως σύστημα αρχείων</a><ul>
+<li><a href="#_7">Προετοιμασία του συστήματος αρχείων</a></li>
+<li><a href="#_8">Είσοδος στο απομονωμένο περιβάλλον</a></li>
+</ul>
+</li>
+<li><a href="#_9">Ολοκλήρωση</a></li>
+</ul>
+</li>
+<li><a href="#_10">Αντιμετώπιση σφαλμάτων</a></li>
+</ul>
+</div>
+        </nav>
+    </div>
+    <div class="span8 article-content">
+
+            
+            
+<h1 id="_1">Εισαγωγή</h1>
+<p>Η τροποποίηση (customisation) μιας υπάρχουσας διανομής (distribution) για κάποιο board είναι μια διαδικασία που μπορείτε να κάνετε σε περίπτωση
+που θέλετε να προσθέσετε-αφαιρέσετε κάποια πακέτα του συστήματος, να αλλάξετε λειτουργίες, να προσθέσετε-αφαιρέσετε κάποια αρχεία και γενικά αν
+θέλετε να δημιουργήσετε μια δικιά σας εκδοχή της διανομής πριν την εγκαταστήσετε στο board σας.</p>
+<p>Περιπτώσεις που μπορεί να είναι χρήσιμο αυτό είναι σε σχολεία, ιδρύματα, επιχειρήσεις κλπ όπου ο υπεύθυνος των πληροφοριακών συστημάτων θέλει να δημιουργήσει
+μια τροποποιημένη και εμπλουτισμένη εκδοχή μιας διανομής που θα χρησιμοποιηθεί σε κάποιο Singel Board Computer.</p>
+<p>Η μεθοδολογία που θα παρουσιαστεί είναι ο τρόπος με τον οποίο φτιάχτηκε η διανομή του έργου BusinessPi και μπορεί να φανεί χρήσιμη για όποιον θέλει
+να κάνει το ίδιο ανεξαρτήτως του board που διαθέτει.</p>
+<h1 id="_2">Εργαλεία και Μεθοδολογία</h1>
+<p>Σε γενικά πλαίσια θα χρειαστεί να προετοιμάσουμε τον υπολογιστή στον οποίο θα δουλέψουμε για να προσομοιώσει ένα περιβάλλον εντολών για ARM αρχιτεκτονική.
+Ο υπολογιστής θα πρέπει να έχει λειτουργικό σύστημα Linux. Έπειτα θα χρειαστούμε μια βάση ως σημείο εκκίνησης, το οποίο είναι μια διανομή ειδικά φτιαγμένη για το board που διαθέτουμε.
+Τέλος προσαρτούμε την διανομή που κατεβάσαμε και κάνουμε εγκατάσταση η αφαίρεση των στοιχείων που θέλουμε.</p>
+<h2 id="_3">Προετοιμασία του υπολογιστή</h2>
+<p>Θα χρειαστεί να εγκαταστήσουμε κάποια πακέτα για να μπορέσουμε να εκτελέσουμε εντολές που θα μεταφράζονται σε ARM περιβάλλον</p>
+<ul>
+<li>qemu</li>
+<li>qemu-user-static</li>
+<li>binfmt-support</li>
+<li>unzip</li>
+</ul>
+<p>Ανάλογα με την διανομή του υπολογιστή σας το όνομα των πακέτων μπορεί να διαφέρει. Εδώ θα δούμε πως γίνεται η εργασία σε Debian/Ubuntu συστήματα</p>
+<div class="highlight"><pre>sudo apt-get install qemu qemu-user-static binfmt-support unzip
+</pre></div>
+<p>Το <code>qemu</code> είναι ένας εξομοιωτής ARM ενώ τα <code>qemu-user-static</code> και <code>binfmt-support</code> μας επιτρέπουν να τρέξουμε εκτελέσιμα αρχεία ARM χωρίς να χρειάζεται να προσομοιώσουμε και πυρήνα ARM. Το <code>unzip</code> θα το χρειαστούμε
+για να αποσυμπιέσουμε το στιγμιότυπο που θα κατεβάσουμε.</p>
+<h2 id="_4">Λήψη βάσης</h2>
+<p>Ανάλογα με το μοντέλο του Board μας θα πρέπει να επισκεφτούμε την αντίστοιχη ιστοσελίδα της κοινότητας η του κατασκευαστή και να κατεβάσουμε μια έτοιμη για το board μας διανομή.</p>
+<p>Διαλέξτε μια διανομή που σας ενδιαφέρει και προτιμήστε αυτήν για την οποία γνωρίζετε το σύστημα πακέτων που χρησιμοποιεί για να μπορέσετε εύκολα και γρήγορα να διαμορφώσετε το τελικό προϊόν.
+Επίσης πριν διαλέξετε μια διανομή, συμβουλευτείτε τον οδηγό, για να προσέξετε κάποια σημεία τα οποία θα πρέπει η διανομή της επιλογής σας να πληροί κάποιες προϋποθέσεις : <a href="http://businesspi.github.io/dimiourgia-server-pi-board.html">Δημιουργία εταιρικού διακομιστή σε Singel Board Computer</a></p>
+<p>Ως παράδειγμα θα χρησιμοποιήσουμε το Bananian το οποίο χρησιμοποιήθηκε για την δημιουργία της διανομής του BusinessPi. Παρόλα αυτά η μεθοδολογία παραμένει ίδια για όποια διανομή και αν είναι
+συμβατή με το board σας.</p>
+<div class="highlight"><pre>mkdir -p images/bananian-os
+wget <span class="s2">"http://dl.bananian.org/releases/bananian-15.04.zip"</span> -O <span class="s2">"images/bananian-os.zip"</span>
+unzip <span class="s2">"images/bananian-os.zip"</span> -d images/bananian-os
+rm images/bananian-os.zip
+</pre></div>
+<p>Έτσι λοιπόν θα έχουμε ένα αρχείο <code>.img</code> στον φάκελο bananian-os το οποίο και θα τροποποιήσουμε για να φτιάξουμε την δική μας εκδοχή της διανομής.</p>
+<div class="highlight"><pre>ls images/bananian-os
+bananian-1504.img
+</pre></div>
+<h2 id="_5">Εύρεση κατατμήσεων</h2>
+<p>Το αρχείο <code>.img</code> στον φάκελο bananian-os στην πραγματικότητα είναι ένας δίσκος ο οποίος έχει προεγκατασταθεί το λειτουργικό σύστημα και έχει χωριστεί σε κατατμήσεις. Σκεφτείτε το ως ένα <strong>στιγμιότυπο</strong> μιας χρονικής στιγμής
+του λειτουργικού συστήματος σε έναν σκληρό δίσκο. Θα πρέπει λοιπόν να δούμε που γίνεται η μετατόπιση (offset) των κατατμήσεων ήτοι που ξεκινάνε και που τελειώνουν.
+Αυτό γίνεται με τις παρακάτω εντολές:</p>
+<div class="highlight"><pre><span class="nb">cd </span>images/bananian-os
+sudo fdisk -lu bananian-1504.img
+</pre></div>
+<p>η τελευταία θα μας δώσει ένα αποτέλεσμα όπως το παρακάτω</p>
+<div class="highlight"><pre>Disk bananian-1504.img: 1.8 GiB, <span class="m">1899999744</span> bytes, <span class="m">3710937</span> sectors
+Units: sectors of <span class="m">1</span> * <span class="nv">512</span> <span class="o">=</span> <span class="m">512</span> bytes
+Sector size <span class="o">(</span>logical/physical<span class="o">)</span>: <span class="m">512</span> bytes / <span class="m">512</span> bytes
+I/O size <span class="o">(</span>minimum/optimal<span class="o">)</span>: <span class="m">512</span> bytes / <span class="m">512</span> bytes
+Disklabel <span class="nb">type</span>: dos
+Disk identifier: 0x9f732a23
+
+Device             Boot Start     End Sectors  Size Id Type
+bananian-1504.img1       <span class="m">2048</span>   <span class="m">43007</span>   <span class="m">40960</span>   20M <span class="m">83</span> Linux
+bananian-1504.img2      <span class="m">43008</span> <span class="m">3710936</span> <span class="m">3667929</span>  1.8G <span class="m">83</span> Linux
+</pre></div>
+<p>από το παραπάνω αποτέλεσμα χρειαζόμαστε τα εξής:</p>
+<ul>
+<li>Sector size (logical/physical): <strong>512</strong> bytes / 512 bytes</li>
+<li>Η ριζική κατάτμηση (/) ξεκινάει στους: <strong>43008</strong> τομείς</li>
+<li>Η κατάτμηση εκκίνησης (/boot) ξεκινάει στους: <strong>2048</strong> τομείς</li>
+</ul>
+<p>Κάθε τομέας είναι 512 bytes, έτσι ώστε η μετατόπιση της ριζικής κατάτμησης να είναι είναι <code>43008 * 512 = 22020096 bytes</code>
+ενώ η μετατόπιση της κατάτμησης εκκίνησης είναι <code>2048 * 512 = 1048576 bytes</code></p>
+<p>Κρατάμε λοιπόν τους δύο αριθμούς:</p>
+<ul>
+<li>Partition <code>/</code> offset: <strong>22020096</strong></li>
+<li>Partition <code>/boot</code> offset: <strong>1048576</strong></li>
+</ul>
+<h2 id="_6">Προσάρτηση ως σύστημα αρχείων</h2>
+<p>Στη συνέχεια, θα πρέπει να προσαρτήσουμε το στιγμιότυπο <code>.img</code> ως ένα σύστημα αρχείων. Αυτό μπορεί να γίνει χρησιμοποιώντας μια συσκευή loopback.
+Εδώ θα χρησιμοποιούμε και την τιμή του <code>offset</code> από την προηγούμενη ενότητα για να πούμε στην εντολή <code>mount</code> που θα προσαρτήσει το
+στιγμιότυπο και από που θα ξεκινάνε οι κατατμήσεις.</p>
+<blockquote>
+<p>Η σειρά αυτών των εντολών είναι σημαντική.</p>
+</blockquote>
+<div class="highlight"><pre>sudo mount -o loop,offset<span class="o">=</span><span class="m">22020096</span> <span class="s2">"bananian-1504.img"</span> /mnt
+sudo mount -o loop,offset<span class="o">=</span><span class="m">1048576</span> <span class="s2">"bananian-1504.img"</span> /mnt/boot
+</pre></div>
+<h3 id="_7">Προετοιμασία του συστήματος αρχείων</h3>
+<p>Τώρα θα πρέπει να αντιγράψουμε τον εξομοιωτή στο προσαρτημένο σύστημα αρχείων</p>
+<div class="highlight"><pre>sudo cp /usr/bin/qemu-arm-static /mnt/usr/bin/
+</pre></div>
+<p>Επίσης θα χρειαστεί να παρέχουμε στο προσαρτημένο σύστημα αρχείων κάποια στοιχεία του λειτουργικού συστήματος του υπολογιστή μας</p>
+<div class="highlight"><pre>sudo mount --rbind /dev /mnt/dev
+sudo mount -t proc none /mnt/proc
+sudo mount -o <span class="nb">bind</span> /sys /mnt/sys
+</pre></div>
+<h3 id="_8">Είσοδος στο απομονωμένο περιβάλλον</h3>
+<p>Το σύστημα μας είναι έτοιμο και μπορούμε να εισέλθουμε σε αυτό κάνοντας χρήση του περιβάλλοντος <code>chroot</code></p>
+<div class="highlight"><pre>sudo chroot /mnt
+</pre></div>
+<p>Με την είσοδό σας σε αυτό το απομονωμένο περιβάλλον θα παρατηρήσετε ότι άλλαξε το τερματικό σας και πλέον είστε root και μπορείτε
+να εκτελέσετε εντολές που θα εκτελούσατε σε μια διανομή που είναι εγκατεστημένη σε υπολογιστή.</p>
+<div class="highlight"><pre>root@debian / <span class="c">#</span>
+root@debian / <span class="c"># ls</span>
+bin/   etc/   lost+found/  opt/   run/      srv/       tmp/
+boot/  home/  media/       proc/  sbin/     swapfile1  usr/
+dev/   lib/   mnt/         root/  selinux/  sys/       var/
+</pre></div>
+<p>Τώρα μπορείτε να κάνετε εγκατάσταση η αφαίρεση πακέτων και ότι άλλο χρειάζεστε να έχει η τελική σας διανομή. Συμβουλευτείτε τον οδηγό <a href="http://businesspi.github.io/dimiourgia-server-pi-board.html">Δημιουργία εταιρικού διακομιστή σε Singel Board Computer</a>
+για να δείτε πως μπορείτε π.χ. να εγκαταστήσετε το εταιρικό λογισμικό VtigerCRM.</p>
+<h2 id="_9">Ολοκλήρωση</h2>
+<p>Αφού έχετε τελειώσει με την διαμόρφωση της διανομής μπορείτε να κάνετε έξοδο από το περιβάλλον με δυο τρόπους:</p>
+<ul>
+<li>exit</li>
+<li>CTRL+D</li>
+</ul>
+<p>Τώρα διαγράψτε το αρχείο <code>qemu-user-static</code> που είχαμε αντιγράψει πριν.</p>
+<div class="highlight"><pre>sudo rm /mnt/usr/bin/qemu-arm-static
+</pre></div>
+<p>Τέλος οπό-πορσαρτήστε το σύστημα αρχείων των δυο κατατμήσεων</p>
+<div class="highlight"><pre>sudo umount /mnt
+sudo umount /mnt/boot
+</pre></div>
+<p>Η διανομή σας πλέον είναι έτοιμη και μπορείτε να την εγκαταστήσετε όπως διαβάσατε στον οδηγό <a href="http://businesspi.github.io/sindesi-egkatastasi-businesspi.html">εγκατάστασης σε προηγούμενο άρθρο</a>.</p>
+<h1 id="_10">Αντιμετώπιση σφαλμάτων</h1>
+<p>Σε περίπτωση που στην προσπάθεια από-προσάρτησης λάβετε ένα μήνυμα όπως παρακάτω</p>
+<div class="highlight"><pre>umount: /mnt: target is busy
+        <span class="o">(</span>In some cases useful info about processes that
+         use the device is found by lsof<span class="o">(</span>8<span class="o">)</span> or fuser<span class="o">(</span>1<span class="o">)</span>.<span class="o">)</span>
+</pre></div>
+<p>Τότε σημαίνει ότι κάποια υπηρεσία που εκτελείται στο προσαρτημένο σύστημα αρχείων αποτρέπει την από-προσάρτηση. Σε αυτή την περίπτωση
+μπορείτε να εντοπίσετε την υπηρεσία που εκτελείται και να την τερματίσετε με</p>
+<p><strong>Λύση 1</strong></p>
+<div class="highlight"><pre>sudo lsof /mnt
+COMMAND   PID  USER   FD   TYPE DEVICE SIZE/OFF NODE NAME
+bash    <span class="m">16715</span> user    cwd  DIR   8,81  <span class="m">16384</span>    <span class="m">6931</span> /mnt
+cat     <span class="m">33753</span> root    1w   REG   8,81      <span class="m">0</span>  <span class="m">6944</span> /mnt
+
+<span class="nb">kill</span> -9 <span class="m">16715</span> 33753
+lsof /mnt
+sudo umount /mnt
+</pre></div>
+<p><strong>Λύση 2</strong></p>
+<div class="highlight"><pre>showmount -e
+Export list <span class="k">for</span> alpha:
+/mnt/ 192.168.1.200
+/etc/init.d/nfs-kernel-server stop
+umount /mnt/
+</pre></div>
+<p><strong>Λύση 3</strong></p>
+<div class="highlight"><pre>losetup -a
+/dev/loop0: <span class="o">[</span>0851<span class="o">]</span>:6983 <span class="o">(</span>/mnt/disk.img<span class="o">)</span>
+/dev/loop1: <span class="o">[</span>0851<span class="o">]</span>:6986 <span class="o">(</span>/mnt/boot/disk2.img<span class="o">)</span>
+umount /mnt/disk.img
+umount /mnt/boot/disk2.img
+umount: /mnt/boot/disk2.img: not mounted
+losetup -d /dev/loop1
+umount /mnt/boot
+</pre></div>
+<p><strong>Λύση 4</strong></p>
+<div class="highlight"><pre>cat /proc/swaps
+Filename                   Type            Size    Used    Priority
+/mnt/swapfile              file            <span class="m">95480</span>   <span class="m">0</span>       -2
+<span class="c"># swapoff /mnt/swapfile</span>
+<span class="c"># umount /mnt/</span>
+</pre></div>
+<p><strong>Λύση 5</strong></p>
+<div class="highlight"><pre>dmesg
+
+<span class="o">[</span>.<span class="o">]</span> lost page write due to I/O error on md0
+<span class="o">[</span>.<span class="o">]</span> Buffer I/O error on device md0, logical block 16804
+<span class="o">[</span>.<span class="o">]</span> INFO: task cp:27736 blocked <span class="k">for</span> more than <span class="m">120</span> seconds.
+<span class="o">[</span>.<span class="o">]</span> <span class="s2">"echo 0 &gt; /proc/sys/kernel/hung_task_timeout_secs"</span> disables this message.
+<span class="o">[</span>.<span class="o">]</span> cp  D ffff88053fdd39c0 <span class="m">0</span> <span class="m">27736</span>  <span class="m">27734</span> 0x00000004
+
+umount -l /mnt
+</pre></div>
+<p><strong>Λύση 6</strong></p>
+<p>Δημιουργείστε ένα bash script με περιεχόμενα τον παρακάτω κώδικα και εκτελέστε το.</p>
+<div class="highlight"><pre><span class="c">#!/usr/bin/env bash</span>
+ls -l /proc/*/root <span class="p">|</span> grep -v <span class="s2">"\-[&gt;] /</span><span class="nv">$"</span><span class="s2"></span>
+
+<span class="s2">for procpid in /proc/*/root; do</span>
+<span class="s2">  linktarget=</span><span class="k">$(</span>readlink <span class="si">${</span><span class="nv">procpid</span><span class="si">}</span><span class="k">)</span><span class="s2"></span>
+<span class="s2">  if [ "</span><span class="si">${</span><span class="nv">linktarget</span><span class="si">}</span><span class="s2">" != "</span>/<span class="s2">" ]; then</span>
+<span class="s2">  echo "</span><span class="si">${</span><span class="nv">procpid</span><span class="si">}</span> chrooted to <span class="si">${</span><span class="nv">linktarget</span><span class="si">}</span><span class="s2">"</span>
+<span class="s2">  fi</span>
+<span class="s2">done</span>
+</pre></div>
+            <section>
+    <p id="post-share-links">
+    Share on:
+    <a href="http://twitter.com/home?status=%CE%A4%CF%81%CE%BF%CF%80%CE%BF%CF%80%CE%BF%CE%AF%CE%B7%CF%83%CE%B7%20%CE%B4%CE%B9%CE%B1%CE%BD%CE%BF%CE%BC%CE%AE%CF%82%20%CE%BA%CE%B1%CE%B9%20%CE%B4%CE%B7%CE%BC%CE%B9%CE%BF%CF%85%CF%81%CE%B3%CE%AF%CE%B1%20%CE%BD%CE%AD%CE%B1%CF%82%20%CE%B3%CE%B9%CE%B1%20Single%20Board%20Computer%20http%3A//businesspi.github.io/dimiourgia-dianomis-board.html" target="_blank" title="Share on Twitter">Twitter</a>
+    ❄
+    <a href="http://www.facebook.com/sharer/sharer.php?s=100&amp;p%5Burl%5D=http%3A//businesspi.github.io/dimiourgia-dianomis-board.html" target="_blank" title="Share on Facebook">Facebook</a>
+    ❄
+    <a href="https://plus.google.com/share?url=http%3A//businesspi.github.io/dimiourgia-dianomis-board.html" target="_blank" title="Share on Google Plus">Google+</a>
+    ❄
+    <a href="mailto:?subject=%CE%A4%CF%81%CE%BF%CF%80%CE%BF%CF%80%CE%BF%CE%AF%CE%B7%CF%83%CE%B7%20%CE%B4%CE%B9%CE%B1%CE%BD%CE%BF%CE%BC%CE%AE%CF%82%20%CE%BA%CE%B1%CE%B9%20%CE%B4%CE%B7%CE%BC%CE%B9%CE%BF%CF%85%CF%81%CE%B3%CE%AF%CE%B1%20%CE%BD%CE%AD%CE%B1%CF%82%20%CE%B3%CE%B9%CE%B1%20Single%20Board%20Computer&amp;body=http%3A//businesspi.github.io/dimiourgia-dianomis-board.html" target="_blank" title="Share via Email">Email</a>
+    </p>
+</section>
+
+            <section>
+<p id="comment-message">Πείτε την γνώμη σας στα σχόλια </p>
+<div class="accordion" id="accordion2">
+    <div class="accordion-group">
+        <div class="accordion-heading">
+            <a class="accordion-toggle disqus-comment-count" data-toggle="collapse" data-parent="#accordion2"
+                href="http://businesspi.github.io/dimiourgia-dianomis-board.html#disqus_thread">
+                Comments
+            </a>
+        </div>
+        <div id="disqus_thread" class="accordion-body collapse">
+            <div class="accordion-inner">
+                <div class="comments">
+                    <div id="disqus_thread"></div>
+<script type="text/javascript">
+    var disqus_shortname = 'businesspi';
+        var disqus_identifier = 'http://businesspi.github.io/dimiourgia-dianomis-board.html';
+    var disqus_url = 'http://businesspi.github.io/dimiourgia-dianomis-board.html';
+
+    (function() {
+         var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+         dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+         (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+     })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</section>
+
+            <hr/>
+<section>
+    <h2>Related Posts</h2>
+<ul class="related-posts-list">
+<li><a href="http://businesspi.github.io/ti-einai-to-businesspi.html" title="Τι είναι το BusinessPi">Τι είναι το BusinessPi</a></li>
+<li><a href="http://businesspi.github.io/hardware-dokimon.html" title="Hardware δοκιμών">Hardware δοκιμών</a></li>
+<li><a href="http://businesspi.github.io/leitourgiko-upiresies-logismiko.html" title="Λειτουργικό Σύστημα, Υπηρεσίες παρασκηνίου και Λογισμικό">Λειτουργικό Σύστημα, Υπηρεσίες παρασκηνίου και Λογισμικό</a></li>
+<li><a href="http://businesspi.github.io/sindesi-egkatastasi-businesspi.html" title="Σύνδεση BananaPi και εγκατάσταση του BusinessPi">Σύνδεση BananaPi και εγκατάσταση του BusinessPi</a></li>
+<li><a href="http://businesspi.github.io/dimiourgia-server-pi-board.html" title="Δημιουργία εταιρικού διακομιστή σε Single Board Computer (Pi board)">Δημιουργία εταιρικού διακομιστή σε Single Board Computer (Pi board)</a></li>
+</ul>
+<hr />
+</section>
+        </div>
+        <section>
+        <div class="span2" style="float:right;font-size:0.9em;">
+            <h4>Published</h4>
+            <time pubdate="pubdate" datetime="2015-10-07T22:14:00+03:00">Oct 7, 2015</time>
+
+<h4>Last Updated</h4>
+<time datetime="2015-10-08T11:50:00+03:00">Oct 8, 2015</time>
+
+            <h4>Category</h4>
+            <a class="category-link" href="http://businesspi.github.io/categories.html#documentation-ref">Documentation</a>
+            <h4>Tags</h4>
+            <ul class="list-of-tags tags-in-article">
+                <li><a href="http://businesspi.github.io/tags.html#custom-ref">custom
+                    <span>1</span>
+</a></li>
+                <li><a href="http://businesspi.github.io/tags.html#distribution-ref">distribution
+                    <span>1</span>
+</a></li>
+                <li><a href="http://businesspi.github.io/tags.html#single-board-computing-ref">single-board-computing
+                    <span>6</span>
+</a></li>
+            </ul>
+<h4>Contact</h4>
+    <a href="https://plus.google.com/+Salihemin" title="My Google-Plus Profile" class="sidebar-social-links" target="_blank">
+    <i class="fa fa-google-plus sidebar-social-links"></i></a>
+    <a href="https://twitter.com/cerebrux" title="My Twitter Profile" class="sidebar-social-links" target="_blank">
+    <i class="fa fa-twitter sidebar-social-links"></i></a>
+    <a href="https://github.com/cerebrux" title="My Github Profile" class="sidebar-social-links" target="_blank">
+    <i class="fa fa-github sidebar-social-links"></i></a>
+    <a href="https://www.linkedin.com/in/salihemin" title="My linkedin Profile" class="sidebar-social-links" target="_blank">
+    <i class="fa fa-linkedin sidebar-social-links"></i></a>
+        </div>
+        </section>
+</div>
+</article>
+                </div>
+                <div class="span1"></div>
+            </div>
+        </div>
+        <div id="push"></div>
+    </div>
+<footer>
+<div id="footer">
+    <ul class="footer-content">
+        <li class="elegant-license"><a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Άδεια Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a><br /> Το έργο με τίτλο <span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text" property="dct:title" rel="dct:type">BusinessPi</span> από τον δημιουργό <a xmlns:cc="http://creativecommons.org/ns#" href="https://github.com/ellak-monades-aristeias/BusinessPi/wiki" property="cc:attributionName" rel="cc:attributionURL">Salih Emin</a> διατίθεται με την άδεια <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Αναφορά Δημιουργού - Μη Εμπορική Χρήση - Παρόμοια Διανομή 4.0 Διεθνές </a>.</li>
+        <li class="elegant-power">Powered by <a href="http://getpelican.com/" title="Pelican Home Page">Pelican</a>. Theme: <a href="http://oncrashreboot.com/pelican-elegant" title="Theme Elegant Home Page">Elegant</a> by <a href="http://oncrashreboot.com" title="Talha Mansoor Home Page">Talha Mansoor</a></li>
+    </ul>
+</div>
+</footer>            <script src="http://code.jquery.com/jquery.min.js"></script>
+        <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+        <script>
+            function validateForm(query)
+            {
+                return (query.length > 0);
+            }
+        </script>
+
+            <script type="text/javascript">
+var disqus_shortname = 'businesspi';
+(function () {
+    var s = document.createElement('script'); s.async = true;
+    s.type = 'text/javascript';
+    s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+    (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+}());
+</script>
+<script  language="javascript" type="text/javascript">
+function uncollapse() {
+    if (window.location.hash.match(/^#comment-\d+$/)) {
+        $('#disqus_thread').collapse('show');
+    }
+}
+</script>
+<script type="text/javascript" language="JavaScript">
+uncollapse();
+window.onhashchange=function(){
+    if (window.location.hash.match(/^#comment-\d+$/))
+        window.location.reload(true);
+}
+</script>
+<script>
+$('#disqus_thread').on('shown', function () {
+    var link = document.getElementsByClassName('accordion-toggle');
+    var old_innerHTML = link[0].innerHTML;
+    $(link[0]).fadeOut(500, function() {
+        $(this).text('Click here to hide comments').fadeIn(500);
+    });
+    $('#disqus_thread').on('hidden', function () {
+        $(link[0]).fadeOut(500, function() {
+            $(this).text(old_innerHTML).fadeIn(500);
+        });
+    })
+})
+</script>
+
+
+    </body>
+    <!-- Theme: Elegant built for Pelican
+    License : http://oncrashreboot.com/pelican-elegant -->
+</html>

@@ -84,8 +84,8 @@ chmod -R 775 /var/www/vtigercrm
 chown -R www-data:www-data /var/www/vtigercrm
 cp /etc/php5/apache2/php.ini /etc/php5/apache2/php.ini.origin
 cp configuration-files/php.ini /etc/php5/apache2/php.ini
-cp configuration-files/vtigercrmapache /etc/apache2/sites-available/
-a2ensite vtigercrmapache
+cp configuration-files/vtigercrmapache.conf /etc/apache2/sites-available/
+a2ensite vtigercrmapache.conf
 a2dissite 000-default
 echo '#########################################'
 echo '########      Βήμα 5 απο 5      #########'
