@@ -14,4 +14,4 @@
 
 κάντε κλίκ στο **New Issue** και συμπληρώστε το αίτημά σας όπως φαίνεται στην εικόνα παρακάτω απαντώντας κάποιες βασικές ερωτήσεις και δίνοντας αναλυτικές πληροφορίες για να μπορεί να αναπαραχθεί το πρόβλημα που αντιμετωπίζετε ώστε να γίνει προσπάθεια επίλυσής του.
 
-![how to report bug businesspi](https://raw.githubusercontent.com/ellak-monades-aristeias/BusinessPi/master/BusinessPi-web-site/images/how-to-bug-report.jpg)
+![how to report bug businesspi](https://raw.githubusercontent.com/ellak-monades-aristeias/BusinessPi/master/Web-Site/images/how-to-bug-report.jpg)

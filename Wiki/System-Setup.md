@@ -35,14 +35,14 @@ HUMANWINE [Public domain] via [Wikimedia Commons](https://commons.wikimedia.org/
 
 1. Εντοπίστε το όνομα της SD κάρτας στον υπολογιστή σας με την εντολή **lsblk** ή την **dmesg** (π.χ. μπορεί να το δείτε προσαρτημένο με το όνομα /dev/mmcblk0 ) και κάντε αποπροσάρτηση με την εντολή umount π.χ. 
 
-```
+```bash
 sudo umount /dev/<όμομα συσκευής>
 ```
 
 2. Κάντε εγγραφή του **image** του λειτουργικού στην SD κάρτα με το λογισμικό **dd** :
 
-```
-sudo dd if=bananian-1504.img of=/dev/<όνομα συσκευής> bs=1M && sync
+```bash
+sudo dd if=businesspi-1504-1.img of=/dev/<όνομα συσκευής> bs=1M && sync
 ```
 
 #### Windows
@@ -53,13 +53,13 @@ sudo dd if=bananian-1504.img of=/dev/<όνομα συσκευής> bs=1M && sync
 
 1. Εντοπίστε το όνομα της SD κάρτας στον υπολογιστή σας με την εντολή 'diskutil list' και κάντε αποπροσάρτηση με την εντολή 'diskutil unmountDisk' όλη την συσκευή π.χ (έστω η συσκευή είναι disk9).
 
-```
+```bash
 diskutil unmountDisk disk9
 ```
 
 2. Κάντε εγγραφή του image του λειτουργικού στην SD κάρτα με το λογισμικό dd :
 
-```
+```bash
 sudo dd if=bananian-1504.img of=/dev/disk9 bs=1M && diskutil eject disk9
 ```
 
@@ -82,13 +82,13 @@ sudo dd if=bananian-1504.img of=/dev/disk9 bs=1M && diskutil eject disk9
 
 Εναλλακτικά μπορείτε σε περιβάλλον Linux να χρησιμοποιήσετε το λογισμικό **Arp-Scan** :
 
-```
+```bash
 sudo arp-scan -l -v
 ```
 
 το αποτέλεσμα της εντολής θα επιστρέψει κάτι που μοιάζει με το παρακάτω
 
-```
+```bash
 Interface: wlan0, datalink type: EN10MB (Ethernet)
 Using 10.3.2.0:255.255.255.0 for localnet
 Starting arp-scan 1.8.1 with 256 hosts (http://www.nta-monitor.com/tools/arp-scan/)
@@ -109,7 +109,7 @@ Starting arp-scan 1.8.1 with 256 hosts (http://www.nta-monitor.com/tools/arp-sca
 
 Αν απορριφθεί η σύνδεση συνεχίζετε με την επόμενη IP. Παράδειγμα: 
 
-```
+```bash
 salih@debian:~$ ssh root@10.3.2.40
 ssh: connect to host 10.3.2.40 port 22: Connection refused
 
@@ -142,12 +142,12 @@ Eίναι συμαντικό να αλλάξετε το port στο οποίο �
 
 Για την ρύθμιση του SSH port:
 
-```
+```bash
 root@vtiger ~ # nano /etc/ssh/sshd_config
 ```
 και αλάξτε στην γραμμή `Port 22` την 22 σε διαφορετική. Έπειτα κάντε επανεκκίνηση την υπηρεσία SSH:
 
-```
+```bash
 root@vtiger ~ # invoke-rc.d ssh restart
 ```
 
@@ -155,7 +155,7 @@ root@vtiger ~ # invoke-rc.d ssh restart
 
 Για την δημιουργία κλειδιών επαναρυθμίστε:
 
-```
+```bash
 root@vtiger ~ # rm -v /etc/ssh/ssh_host_*
 root@vtiger ~ # dpkg-reconfigure openssh-server
 
@@ -165,7 +165,7 @@ Creating SSH2 RSA key; this may take some time ...
 
 Αφού δημιουργηθούν νέα κλειδιά, αποσυσνδεθείτε απο το board και αφαιρέστε απο τον υπολογιστή σας τα παλιά κλειδιά διότι σε διαφορετική περίπτωση όταν θα προσπαθήσετε να συνδεθείτε θα δείτε το παρακάτω μήνυμα με το οποίο αποτυγχάνεται η πιστοποίηση κλειδιών κρυπτογράφησης.:
 
-```
+```bash
 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 @    WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!     @
 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
@@ -184,13 +184,13 @@ Host key verification failed.
 
 Η αφαίρεση μπορεί να γίνει με δυο τρόπους:
 
-```
+```bash
 ssh-keygen -R <ip-to-board>
 ```
 
 ή εναλλακτικά δείτε στο μήνυμα την γραμμή `Οffending RSA key in /home/salih/.ssh/known_hosts:9` ανοίξτε το αρχείο `known_hosts` και αφαιρέστε την αντίστοιχη εγγραφή με τον παρακάτω τρόπο: 
 
-```
+```bash
 vi +9 .ssh/known_hosts
 ```
 Πατήστε `dd` για να διαγράψετε την γραμμή. Αποθηκεύστε και κλείστε με `:wq`
@@ -215,13 +215,13 @@ vi +9 .ssh/known_hosts
 
 Συνδεθείτε στο BusinessPi χρησιμοποιώντας την IP του BusinessPi. [βλέπε Εύρεση IP](#Εύρεση-ip-του-pi-board)
 
-```
+```bash
 ssh root@<IP-Τοu-BusinessPi>
 ```
 Ο κωδικός του root είναι : **businesspi** (τον οποίο τον αλλάζετε αμέσως μετά).
 Έπειτα εκτελέστε της εντολή
 
-```
+```bash
 bananian-config 
 ```
 και απαντήστε στις ερωτήσεις όπως παρακάτω:
@@ -240,7 +240,7 @@ bananian-config
 
 Για την πρώτη ρύθμιση της βάσης δεδομένων MySQL μπορείτε να εκτελέσετε τον οδηγό:
 
-```
+```bash
 mysql_secure_installation
 ```
 
@@ -258,7 +258,7 @@ o κωδικός σύνδεσης για τον **root** της βάσης δε�
 
 Θα χρειαστεί να επεξεργαστούμε το αρχείο `/etc/network/interfaces`
 
-```
+```bash
 root@vtiger ~ # nano /etc/network/interfaces
 
 # interfaces(5) file used by ifup(8) and ifdown(8)
@@ -286,7 +286,7 @@ iface eth0 inet static
 
 Αποθηκεύστε το αρχείο και κλείστε το. Μια τελευταία ρύθμιση είναι να προσθέσετε την στατική IP και στο `/etc/hosts` αρχείο.
 
-```
+```bash
 root@vtiger ~ # nano /etc/hosts
 
 127.0.0.1	localhost
@@ -300,7 +300,7 @@ ff02::2 ip6-allrouters
 ```
 Αποθηκεύστε το αρχείο και κλείστε το. Έπειτα κάντε επανεκκίνηση του συστήματος :
 
-```
+```bash
 shutdown -r now
 ```
 
@@ -316,7 +316,7 @@ shutdown -r now
 
 Πλέον μπορείτε να συνδέεστε και όπως παρακάτω (χωρίς χρήση IP):
 
-```
+```bash
 ssh root@vtiger.businesspi.local
 ```
 
