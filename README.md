@@ -14,6 +14,14 @@
 
 Αναλυτικές πληροφορίες στο [Wiki του BusinessPi](https://github.com/ellak-monades-aristeias/BusinessPi/wiki)
 
+## What is BusinessPi
+
+The Business Pi aims to provide an open hardware and open source software solution that will allow employees to work, collaborate or find the information they need, when they need it, wherever they are, with minimal effort and time, from any device with Internet connection (tablet, laptop, smartphone, pc, etc). 
+
+The project "BusinessPi", provides technical details on how to build an intranet business server, based on Linux, Apache, PHP and MySQL software stack with built in VtigerCRM on top of a Bananna Pi board. Last but not least, the project provides a downloadable image, ready for install on a banana pi of your choice.
+
+Currently the projects' documentation is in Greek only.
+
 ## Οδηγίες για χρήστες
 
 Οι οδηγίες εγκατάστασης και χρήσης του BusinessPi είναι αναλυτικά γραμμένες στο [Wiki του BusinessPi](https://github.com/ellak-monades-aristeias/BusinessPi/wiki)
